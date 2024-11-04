@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gunung Bromo - Java Wonderland</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Sticky Navbar atas */
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      /* Sticky button di bawah */
+      .sticky-footer {
+        position: sticky;
+        bottom: 0;
+        z-index: 1000;
+        width: 100%;
+        background-color: #007bff;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .sticky-footer a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .content {
+        margin-bottom: 70px; /* Spacing for sticky footer */
+      }
+
+      /* Styling untuk gambar di halaman */
+      .image-banner {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+
+      /* Styling untuk paragraf konten */
+      .content p {
+        text-align: justify;
+      }
+
+      /* Styling button pesan sekarang */
+      .sticky-footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <!-- Navbar Atas -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">Java Wonderland</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/app/Home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">All Trips</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/app/gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Review</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Banner Gambar -->
+    <div class="container mt-3">
+      <img src="/Componen/gambar bromo.jpeg" class="image-banner" alt="Gunung Bromo" />
+    </div>
+
+    <!-- Isi Halaman -->
+    <div class="container content mt-4">
+      <h2 class="text-center mb-4">Wisata Gunung Bromo</h2>
+      <p>
+        Gunung Bromo merupakan salah satu destinasi wisata yang paling populer di
+        Pulau Jawa. Terletak di provinsi Jawa Timur, gunung ini terkenal dengan
+        pemandangan matahari terbit yang menakjubkan dan keindahan alamnya yang
+        memukau. Wisatawan dapat menyaksikan lautan pasir luas yang dikenal
+        dengan nama "Segara Wedi", kawah yang aktif, dan panorama pegunungan
+        yang indah di sekitarnya.
+      </p>
+      <p>
+        Gunung Bromo memiliki ketinggian sekitar 2.329 meter di atas permukaan
+        laut dan merupakan bagian dari Taman Nasional Bromo Tengger Semeru.
+        Aktivitas favorit di Bromo termasuk pendakian menuju puncak untuk
+        menyaksikan matahari terbit, berkuda di sekitar lautan pasir, dan
+        mengunjungi Pura Luhur Poten, sebuah pura yang berada di kaki gunung.
+      </p>
+      <p>
+        Selain keindahan alam, Gunung Bromo juga menawarkan pengalaman
+        budaya yang unik dengan upacara adat masyarakat Tengger. Salah satu
+        upacara yang terkenal adalah "Kasada", di mana penduduk lokal melempar
+        sesajen ke kawah Bromo untuk menghormati para dewa dan leluhur mereka.
+      </p>
+      <p>
+        Bagi para wisatawan yang ingin merasakan keindahan Bromo secara maksimal,
+        disarankan untuk datang pada dini hari, karena momen terbaik untuk
+        menyaksikan sunrise adalah sekitar pukul 05:30 pagi. Perjalanan ke
+        puncak Bromo dapat dilakukan dengan berjalan kaki atau menggunakan jeep
+        yang tersedia di sekitar area wisata.
+      </p>
+
+      <h3 class="mt-5">Cara Menuju Gunung Bromo</h3>
+      <p>
+        Untuk mencapai Gunung Bromo, wisatawan dapat berangkat dari kota-kota
+        besar di Jawa Timur seperti Surabaya atau Malang. Terdapat banyak agen
+        perjalanan yang menawarkan paket wisata Bromo dengan transportasi jeep
+        dan pemandu wisata yang siap membantu Anda menjelajahi keindahan Bromo.
+      </p>
+
+      <h3 class="mt-5">Tips Berwisata di Gunung Bromo</h3>
+      <ul>
+        <li>Gunakan pakaian hangat karena suhu di Bromo bisa sangat dingin, terutama di pagi hari.</li>
+        <li>Bawa masker atau penutup wajah untuk melindungi dari debu saat berada di lautan pasir.</li>
+        <li>Jangan lupa untuk membawa kamera untuk mengabadikan momen sunrise yang menakjubkan.</li>
+        <li>Pesan perjalanan jeep dan pemandu wisata sebelumnya, terutama pada musim liburan.</li>
+      </ul>
+    </div>
+
+    <!-- Sticky Footer (Pesan Sekarang) -->
+    <div class="sticky-footer">
+      <a href="/app/pemesanan.html" class="btn">Pesan Sekarang</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

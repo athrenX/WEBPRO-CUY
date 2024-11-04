@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gunung Sindoro - Java Wonderland</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .sticky-footer {
+        position: sticky;
+        bottom: 0;
+        z-index: 1000;
+        width: 100%;
+        background-color: #007bff;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .sticky-footer a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .content {
+        margin-bottom: 70px;
+      }
+
+      .image-banner {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+
+      .content p {
+        text-align: justify;
+      }
+
+      .sticky-footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">Java Wonderland</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="Home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">All Trips</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Review</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-3">
+      <img src="/Componen/gunung-sindoro.jpeg" class="image-banner" alt="Gunung Sindoro" />
+    </div>
+
+    <div class="container content mt-4">
+      <h2 class="text-center mb-4">Wisata Gunung Sindoro</h2>
+      <p>
+        Gunung Sindoro terletak di Jawa Tengah dan sering disebut sebagai "kembar" dari Gunung Sumbing.
+        Gunung ini terkenal dengan keindahan alamnya dan menjadi tujuan favorit bagi para pendaki. Jalur pendakian
+        Gunung Sindoro menawarkan panorama alam yang luar biasa, terutama pada pagi hari ketika kabut masih menyelimuti
+        pegunungan di sekitarnya.
+      </p>
+      <p>
+        Sindoro adalah tempat yang sempurna bagi wisatawan yang mencari ketenangan dan keindahan alam. Pendakian Sindoro
+        menawarkan pemandangan perkebunan teh, hutan pegunungan, serta padang sabana yang menakjubkan di sepanjang
+        perjalanan.
+      </p>
+      <p>
+        Bagi yang gemar fotografi alam, sunrise dari puncak Gunung Sindoro memberikan kesempatan untuk menangkap
+        momen indah dengan latar pegunungan dan awan yang dramatis. Pendakian ke Gunung Sindoro dapat dilakukan dari
+        beberapa jalur, dan perjalanan biasanya membutuhkan waktu sekitar 6-8 jam.
+      </p>
+
+      <h3 class="mt-5">Cara Menuju Gunung Sindoro</h3>
+      <p>
+        Pendakian ke Gunung Sindoro bisa dimulai dari kota Wonosobo atau Temanggung. Dari sana, wisatawan dapat
+        melanjutkan perjalanan ke desa-desa yang menjadi titik awal pendakian, seperti Desa Kledung. Kendaraan umum
+        dan ojek tersedia untuk membawa pengunjung ke basecamp pendakian.
+      </p>
+
+      <h3 class="mt-5">Tips Berwisata di Gunung Sindoro</h3>
+      <ul>
+        <li>Pastikan untuk membawa persediaan air yang cukup karena ketersediaan air di jalur pendakian terbatas.</li>
+        <li>Gunakan perlengkapan pendakian yang sesuai dan sepatu hiking yang nyaman.</li>
+        <li>Bawa jaket hangat karena suhu di puncak bisa sangat dingin, terutama menjelang subuh.</li>
+      </ul>
+    </div>
+
+    <div class="sticky-footer">
+      <a href="pemesanan.html" class="btn">Pesan Sekarang</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
