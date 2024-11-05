@@ -32,3 +32,64 @@
             margin-top: 10px;
             display: none;
         }
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-payment">
+        <div class="container">
+            <h2 class="text-center">KONFIRMASI PEMBAYARAN</h2>
+            <p class="text-center mb-0">Travel Wisata DJawa</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="form-container">
+                    <!-- Informasi Pemesanan -->
+                    <div class="booking-info mb-4">
+                        <h5>Detail Pemesanan</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><strong>Kode Booking:</strong> JW2024001</p>
+                                <p><strong>Paket:</strong> Bromo Tour</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><strong>Total:</strong> Rp 125.000</p>
+                                <p><strong>Status:</strong> Menunggu Pembayaran</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Konfirmasi -->
+                    <form id="paymentForm">
+                        <!-- Pilihan Bank -->
+                        <div class="mb-4">
+                            <label class="form-label">Pilih Bank</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="bank-option" data-bank="BCA">
+                                        <strong>Bank BCA</strong>
+                                        <p class="mb-0">1234-5678-90</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="bank-option" data-bank="Mandiri">
+                                        <strong>Bank Mandiri</strong>
+                                        <p class="mb-0">0987-6543-21</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="bank-option" data-bank="BRI">
+                                        <strong>Bank BRI</strong>
+                                        <p class="mb-0">0925-8720-12</p>
+                                    </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="bank-option" data-bank="BTN">
+                                    <strong>Bank BTN</strong>
+                                    <p class="mb-0">1246-1375-00</p>
+                                </div>
+                        </div>
