@@ -4,76 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Java Wonderland</title>
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/app/css/home.css">
 </head>
 <body class="d-flex flex-column min-vh-100">
-<!-- hhhhhhh -->
+
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary-gradient shadow-sm">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Java Wonderland</a>
+      <a class="navbar-brand fw-bold text-uppercase" href="#">Java Wonderland</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">All Trips</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="gallery.html">Gallery</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Review</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="#"><i class="fas fa-home me-1"></i>Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-map-signs me-1"></i>All Trips</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="fas fa-images me-1"></i>Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-comments me-1"></i>Review</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html"><i class="fas fa-user me-1"></i>Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+         
+          <!-- Ikon Notifikasi -->
+          <li class="nav-item position-relative">
+            <a class="nav-link" href="#" id="notification-icon">
+              <i class="fas fa-bell fa-lg"></i>
+              <span class="badge bg-danger position-absolute top-0 start-100 translate-middle" id="notification-badge" style="display: none;">1</span>
+            </a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+  
 
   <!-- Hero Section with Carousel -->
   <div class="container-fluid p-0">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
       <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
-        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
-        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
-      </ol>
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
 
       <!-- Carousel Items -->
       <div class="carousel-inner">
-        <!-- Slide 1 -->
         <div class="carousel-item active">
-          <img src="/Componen/gambar bromo.jpeg" class="d-block w-100" style="height: 85vh; object-fit: cover;" alt="Gunung Bromo">
+          <img src="/Componen/gambar bromo.jpeg" class="d-block w-100" alt="Gunung Bromo">
           <div class="carousel-caption d-none d-md-block">
-            <h2 class="display-5">Hi, Travelers</h2>
-            <h1 class="display-1 fw-bold">BROMO</h1>
+            <h2 id="userGreeting" class="display-5 text-light">Hi, Travelers</h2> <!-- ID untuk greeting -->
+            <h1 class="display-1 fw-bold text-light">BROMO</h1>
           </div>
         </div>
-        <!-- Slide 2 -->
         <div class="carousel-item">
-          <img src="/Componen/gunung-sindoro.jpeg" class="d-block w-100" style="height: 85vh; object-fit: cover;" alt="Pantai Selatan">
+          <img src="/Componen/gunung-sindoro.jpeg" class="d-block w-100" alt="Gunung Sindoro">
           <div class="carousel-caption d-none d-md-block">
-            <h2 class="display-5">Hi, Travelers</h2>
-            <h1 class="display-1 fw-bold">Gunung Sindoro</h1>
+            <h2 class="display-5 text-light">Hi, Travelers</h2>
+            <h1 class="display-1 fw-bold text-light">Gunung Sindoro</h1>
           </div>
         </div>
-        <!-- Slide 3 -->
         <div class="carousel-item">
-          <img src="/Componen/anyer.jpg" class="d-block w-100" style="height: 85vh; object-fit: cover;" alt="Dieng Plateau">
+          <img src="/Componen/anyer.jpg" class="d-block w-100" alt="Pantai Anyer">
           <div class="carousel-caption d-none d-md-block">
-            <h2 class="display-5">Hi, Travelers</h2>
-            <h1 class="display-1 fw-bold">Pantai anyer</h1>
+            <h2 class="display-5 text-light">Hi, Travelers</h2>
+            <h1 class="display-1 fw-bold text-light">Pantai Anyer</h1>
           </div>
         </div>
       </div>
@@ -91,12 +92,16 @@
   </div>
 
   <!-- Footer -->
-  <footer class="bg-light mt-auto py-3 text-center">
+  <footer class="bg-dark mt-auto py-3 text-center text-light">
     <div class="container">
       <p class="mb-0">&copy; 2024 Java Wonderland. All Rights Reserved.</p>
     </div>
   </footer>
 
+  <!-- Custom JS -->
+
+  <script src="/app/js/Home.js"></script>
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
