@@ -157,7 +157,7 @@
                             </div>
 
                             <div class="mt-4">
-                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                <button type="submit" class="btn btn-primary btn-lg w-100" href='/app/pembayaran.html'>
                                     Confirm Booking
                                 </button>
                             </div>
@@ -303,52 +303,49 @@
             document.getElementById('summaryTotal').textContent = `IDR ${totalPrice.toLocaleString()}`;
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeDestinations();
+    document.addEventListener('DOMContentLoaded', function() {
+    initializeDestinations();
 
-            // Handle vehicle type selection
-            document.querySelectorAll('.category-item').forEach(item => {
-                item.addEventListener('click', function() {
-                    document.querySelectorAll('.category-item').forEach(i => i.classList.remove('active'));
-                    this.classList.add('active');
-                    selectedVehicleType = this.dataset.type;
-                    updateSeatLayout();
-                    updateSummary();
-                });
-            });
-
-            // Handle booking form submission
-            const bookingForm = document.getElementById('bookingForm');
-            bookingForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-                if (!selectedDestination || selectedSeats.size === 0) {
-                    alert("Please select a destination and at least one seat.");
-                    return;
-                }
-                
-                const formData = new FormData(bookingForm);
-                const bookingDetails = {
-                    name: formData.get('name'),
-                    email: formData.get('email'),
-                    mobile: formData.get('mobile'),
-                    departureDate: formData.get('departureDate'),
-                    vehicleType: selectedVehicleType === 'bus' ? 'Bus' : 'Mini Bus',
-                    destination: selectedDestination.name,
-                    distance: selectedDestination.distance,
-                    seats: Array.from(selectedSeats),
-                    totalPrice: document.getElementById('summaryTotal').textContent
-                };
-
-                console.log('Booking Details:', bookingDetails);
-                alert('Booking Confirmed!\n\nDetails:\n' + JSON.stringify(bookingDetails, null, 2));
-
-                // Reset booking selections
-                selectedSeats.clear();
-                updateSeatLayout();
-                updateSummary();
-                bookingForm.reset();
-            });
+    // Handle vehicle type selection
+    document.querySelectorAll('.category-item').forEach(item => {
+        item.addEventListener('click', function() {
+            document.querySelectorAll('.category-item').forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+            selectedVehicleType = this.dataset.type;
+            updateSeatLayout();
+            updateSummary();
         });
+    });
+
+    // Handle booking form submission
+    const bookingForm = document.getElementById('bookingForm');
+    bookingForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        if (!selectedDestination || selectedSeats.size === 0) {
+            alert("Please select a destination and at least one seat.");
+            return;
+        }
+        
+        const formData = new FormData(bookingForm);
+        const bookingDetails = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            mobile: formData.get('mobile'),
+            departureDate: formData.get('departureDate'),
+            vehicleType: selectedVehicleType === 'bus' ? 'Bus' : 'Mini Bus',
+            destination: selectedDestination.name,
+            distance: selectedDestination.distance,
+            seats: Array.from(selectedSeats),
+            totalPrice: document.getElementById('summaryTotal').textContent
+        };
+
+        console.log('Booking Details:', bookingDetails);
+        alert('Booking Confirmed!\n\nDetails:\n' + JSON.stringify(bookingDetails, null, 2));
+
+        // Redirect to pembayaran.html
+        window.location.href = 'pembayaran.html';
+        });
+    });
     </script>
 </body>
 </html>
