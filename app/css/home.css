@@ -109,10 +109,11 @@ footer {
   text-align: center;
   margin-top: 20px; /* Memberikan jarak 20px di atas footer */
 }
+/* Styling untuk popup mobil */
 .popup-bus {
   position: fixed;
-  bottom: 20px; /* Posisi dari bawah layar */
-  left: -300px; /* Mulai dari luar layar di sisi kiri */
+  bottom: 30px; /* Posisi dari bawah layar */
+  left: -400px; /* Mulai dari luar layar di sisi kiri */
   display: flex;
   align-items: center;
   background-color: #333;
@@ -120,22 +121,16 @@ footer {
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  text-align: center;
   z-index: 1000;
   width: auto;
-  transition: left 1s ease;
+  transition: left 1s ease-in-out;
 }
 
 .bus-icon {
   font-size: 2em;
   margin-right: 15px;
   color: #ffd700;
-  animation: bounce 0.5s infinite alternate; /* Efek bouncing */
-}
-
-@keyframes bounce {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-5px); }
+  animation: bounce 0.5s infinite alternate;
 }
 
 .popup-content h5 {
@@ -152,14 +147,13 @@ footer {
 #closePopup {
   background: none;
   border: none;
-  font-size: 1em;
+  font-size: 1.2em;
   color: #fff;
   margin-left: 10px;
   cursor: pointer;
 }
 
-@keyframes moveIn {
-  0% { left: -300px; }
-  50% { left: 50%; transform: translateX(-50%); } /* Tampil di tengah */
-  100% { left: 100%; } /* Keluar ke sisi kanan layar */
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
 }

@@ -110,16 +110,15 @@
   <!-- Custom JavaScript -->
   <script src="/app/js/Home.js"></script>
   <script>
-    $(document).ready(function() {
+   $(document).ready(function() {
   // Menampilkan popup mobil setelah 3 detik
   setTimeout(function() {
-    $('#popupBus').css('left', '50%'); // Mobil berjalan ke tengah
-    $('#popupBus').css('transform', 'translateX(-50%)'); // Tampil di tengah
+    $('#popupBus').css('left', '20px'); // Mobil bergerak ke dalam layar dari kiri
   }, 3000);
 
   // Menutup popup ketika tombol "Close" diklik
   $('#closePopup').click(function() {
-    $('#popupBus').css('left', '100%'); // Mobil keluar ke sisi kanan
+    $('#popupBus').css('left', '100%'); // Mobil bergerak ke luar layar di sisi kanan
   });
 
   // Popup akan keluar otomatis setelah 10 detik
@@ -127,6 +126,8 @@
     $('#popupBus').css('left', '100%'); // Mobil keluar ke sisi kanan
   }, 10000);
 });
+
+
 
   </script>
 
