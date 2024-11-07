@@ -48,7 +48,6 @@ body {
 }
 
 
-
 .carousel-caption h1 {
   font-size: 3.5rem;
   font-weight: bold;
@@ -129,6 +128,16 @@ footer p {
   right: 10%;
 }
 
+/* Card Hover Animation */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi saat transformasi dan shadow berubah */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Membesarkan card sedikit */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+  }
+  
 /* Responsive */
 @media (max-width: 768px) {
   .navbar {
