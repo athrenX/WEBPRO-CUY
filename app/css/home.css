@@ -109,52 +109,57 @@ footer {
   text-align: center;
   margin-top: 20px; /* Memberikan jarak 20px di atas footer */
 }
-
-/* Pop-up Styling */
 .popup-bus {
   position: fixed;
-  bottom: -200px; /* Start hidden below screen */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 400px;
-  background-color: #007bff;
-  color: #fff;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: bottom 0.5s ease-in-out;
-  z-index: 1000;
-}
-
-.popup-bus .popup-content {
+  bottom: 20px; /* Posisi dari bawah layar */
+  left: -300px; /* Mulai dari luar layar di sisi kiri */
   display: flex;
-  flex-direction: column;
   align-items: center;
+  background-color: #333;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
   text-align: center;
+  z-index: 1000;
+  width: auto;
+  transition: left 1s ease;
 }
 
-.popup-bus h5 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+.bus-icon {
+  font-size: 2em;
+  margin-right: 15px;
+  color: #ffd700;
+  animation: bounce 0.5s infinite alternate; /* Efek bouncing */
 }
 
-.popup-bus p {
-  font-size: 1rem;
-  margin-bottom: 15px;
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
+
+.popup-content h5 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #ffd700;
+}
+
+.popup-content p {
+  font-size: 0.9em;
+  margin: 5px 0;
 }
 
 #closePopup {
-  background-color: #ffc107;
-  color: #333;
+  background: none;
   border: none;
-  padding: 8px 20px;
-  border-radius: 5px;
+  font-size: 1em;
+  color: #fff;
+  margin-left: 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-#closePopup:hover {
-  background-color: #ff9800;
+@keyframes moveIn {
+  0% { left: -300px; }
+  50% { left: 50%; transform: translateX(-50%); } /* Tampil di tengah */
+  100% { left: 100%; } /* Keluar ke sisi kanan layar */
 }
