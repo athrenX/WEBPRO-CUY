@@ -1,5 +1,3 @@
-
-
 .navbar {
     background-color: transparent !important;
     transition: box-shadow 0.3s, background-color 0.3s;
@@ -59,8 +57,8 @@
 }
 
 .navbar.hidden {
-    transform: translateY(-100%); /* Menyembunyikan navbar dengan geser ke atas */
-    transition: transform 0.3s ease; /* Transisi halus saat menghilang */
+    transform: translateY(-100%); 
+    transition: transform 0.3s ease; 
 }
 
 /*Hero Section*/
@@ -129,8 +127,6 @@
     text-align: center;
 }
 
-/* Additional styling for new sections */
-
 .attractions h4 {
     font-weight: bold;
     color: #333;
@@ -154,7 +150,7 @@
         flex-direction: column;
     }
 }
-/* Styling untuk Bagian Kegiatan */
+
 .activities .activity-card {
     background-color: #fff;
     border-radius: 10px;
@@ -164,9 +160,9 @@
 }
 
 .activities .activity-card img.activity-img {
-    width: 100%; /* Membuat gambar responsif */
-    height: 200px; /* Menetapkan tinggi yang sama untuk semua gambar */
-    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+    width: 100%; 
+    height: 200px;
+    object-fit: cover; 
     border-radius: 8px;
     margin-bottom: 15px;
 }
@@ -182,7 +178,7 @@
     line-height: 1.6;
 }
 
-/* Media Queries untuk Responsivitas */
+
 @media (max-width: 768px) {
     .activities .row {
         flex-direction: column;
@@ -195,7 +191,7 @@
     }
 }
 
-/* Styling untuk ikon sosial media */
+
 .footer a {
     color: #fff;
     text-decoration: none;
@@ -204,7 +200,7 @@
 }
 
 .footer a:hover {
-    color: #ff5722; /* Warna hover untuk ikon */
+    color: #ff5722;
 }
 
 .footer .bi {
@@ -213,10 +209,9 @@
 }
 
 .footer i {
-    font-size: 1.5rem;  /* Ukuran ikon lebih besar */
-    margin-right: 10px;  /* Jarak antara ikon dan teks */
+    font-size: 1.5rem;  
+    margin-right: 10px;  
 }
-
 
 /* Tombol Pesan Sekarang */
 .pesan-sekarang-btn {

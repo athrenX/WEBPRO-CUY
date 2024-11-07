@@ -1,0 +1,7 @@
+.rating i {
+    cursor: pointer;
+    color: #ddd;
+}
+.rating i.active {
+    color: #ffc107;
+}
