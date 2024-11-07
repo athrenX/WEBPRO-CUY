@@ -111,39 +111,55 @@ footer {
 }
 .popup-bus {
   position: fixed;
-  left: 50%;
-  bottom: -200px; /* Mulai tersembunyi di bawah */
-  transform: translateX(-50%); /* Memastikan popup berada di tengah secara horizontal */
+  bottom: 20px; /* Posisi dari bawah layar */
+  left: -300px; /* Mulai dari luar layar di sisi kiri */
+  display: flex;
+  align-items: center;
   background-color: #333;
   color: #fff;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  transition: bottom 0.5s ease;
   padding: 20px;
   text-align: center;
   z-index: 1000;
-  width: 300px;
+  width: auto;
+  transition: left 1s ease;
 }
 
-/* Styling untuk ikon bus agar lebih rapi */
-.popup-bus .bus-icon {
-  font-size: 1.5em;
-  margin-right: 8px; /* Menambahkan jarak antara ikon bus dan teks */
-  vertical-align: middle;
+.bus-icon {
+  font-size: 2em;
+  margin-right: 15px;
+  color: #ffd700;
+  animation: bounce 0.5s infinite alternate; /* Efek bouncing */
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
 }
 
 .popup-content h5 {
   margin: 0;
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: #ffd700;
 }
 
 .popup-content p {
   font-size: 0.9em;
-  margin-bottom: 15px;
+  margin: 5px 0;
 }
 
 #closePopup {
-  font-size: 0.9em;
-  padding: 5px 10px;
+  background: none;
+  border: none;
+  font-size: 1em;
+  color: #fff;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+@keyframes moveIn {
+  0% { left: -300px; }
+  50% { left: 50%; transform: translateX(-50%); } /* Tampil di tengah */
+  100% { left: 100%; } /* Keluar ke sisi kanan layar */
 }
