@@ -5,15 +5,14 @@ body {
   background-color: #f8f9fa;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Memastikan halaman memenuhi tinggi viewport */
+  min-height: 100vh;
   margin: 0;
 }
 
 /* Navbar Styling */
 .navbar {
-  background: linear-gradient(135deg, #007bff, #4a90e2); /* Gradasi warna */
+  background: linear-gradient(135deg, #007bff, #4a90e2);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  
 }
 
 .navbar .navbar-brand {
@@ -24,7 +23,7 @@ body {
 }
 
 .navbar .navbar-brand:hover {
-  color: #ffd700; /* Warna emas saat hover */
+  color: #ffd700;
 }
 
 .navbar .nav-link {
@@ -36,17 +35,13 @@ body {
   align-items: center;
 }
 
-.navbar .nav-link i {
-  margin-right: 5px;
-}
-
 .navbar .nav-link:hover {
-  color: #fff; /* Putih saat hover */
-  transform: translateY(-2px); /* Efek melayang */
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .navbar .nav-link.active {
-  color: #ffd700; /* Warna emas untuk item aktif */
+  color: #ffd700;
 }
 
 /* Notification Badge */
@@ -60,10 +55,6 @@ body {
 }
 
 /* Carousel Styling */
-.carousel-item {
-  position: relative;
-}
-
 .carousel-item img {
   height: 85vh;
   object-fit: cover;
@@ -74,12 +65,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* Teks rata kiri */
+  align-items: flex-start;
   height: 100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  padding-left: 20px; /* Tambahkan padding agar teks tidak terlalu mepet ke kiri */
+  padding-left: 20px;
   color: #fff;
   text-align: left;
 }
@@ -93,27 +81,20 @@ body {
   font-size: 1.8rem;
 }
 
-/* Untuk efek fade */
-.carousel-fade .carousel-item {
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-
-.carousel-fade .carousel-item.active {
-  opacity: 1;
-}
+/* Footer Styling */
 footer {
   background-color: #003c77;
   color: #f8f9fa;
-  padding: 30px 0; /* Memberikan lebih banyak padding di bagian atas dan bawah footer */
+  padding: 30px 0;
   text-align: center;
-  margin-top: 20px; /* Memberikan jarak 20px di atas footer */
+  margin-top: 20px;
 }
-/* Styling untuk popup mobil */
+
+/* Popup Styling */
 .popup-bus {
   position: fixed;
-  bottom: 30px; /* Posisi dari bawah layar */
-  left: -400px; /* Mulai dari luar layar di sisi kiri */
+  bottom: 30px;
+  left: -400px;
   display: flex;
   align-items: center;
   background-color: #333;
@@ -139,21 +120,112 @@ footer {
   color: #ffd700;
 }
 
-.popup-content p {
-  font-size: 0.9em;
-  margin: 5px 0;
-}
-
 #closePopup {
   background: none;
   border: none;
   font-size: 1.2em;
   color: #fff;
-  margin-left: 10px;
   cursor: pointer;
 }
 
-@keyframes bounce {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-5px); }
+/* Sidebar Profil */
+.profile-sidebar {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+  transition: right 0.4s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.profile-sidebar.open {
+  right: 0;
+}
+
+.profile-content {
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Container for profile picture and change picture text */
+.profile-pic-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 15px; /* Original spacing below profile picture */
+  border: 2px solid #ffd700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-btn {
+  color: #ffd700;
+  font-size: 0.8em;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 10px; /* Tambahkan jarak di atas teks "Change Picture" */
+}
+
+
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+#logoutButton {
+  margin-top: 20px;
+  width: 80%;
+  background-color: red;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#logoutButton:hover {
+  background-color: #cc0000;
+}
+
+/* Media Query untuk Responsive */
+@media (max-width: 768px) {
+  .navbar .nav-link {
+    font-size: 0.9em;
+  }
+
+  .carousel-caption h1 {
+    font-size: 2.5rem;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.2rem;
+  }
+
+  .popup-bus {
+    bottom: 20px;
+    left: 10px;
+    width: 90%;
+    padding: 15px;
+  }
+
+  .profile-sidebar {
+    width: 100%;
+  }
 }

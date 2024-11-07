@@ -1,31 +1,26 @@
-
-
-/* hhhh */
-
 /* Latar Belakang Gambar */
 .bg-image {
-    background-image: url('/images/login-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-  }
-  
-  /* Overlay Gelap untuk Gambar Background */
-  .bg-image::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Overlay gelap */
-    z-index: -1;
-  }
-  
- /* Global Styles */
+  background-image: url('/images/login-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bg-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Overlay gelap */
+  z-index: -1;
+}
+
+/* Global Styles */
 body {
   font-family: 'Poppins', sans-serif;
   color: #333;
@@ -34,75 +29,8 @@ body {
 
 /* Navbar Styling */
 .navbar {
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.navbar .navbar-brand {
-  font-size: 1.8rem;
-  color: #007bff;
-}
-
-.navbar .nav-link {
-  color: #333;
-  transition: color 0.3s;
-}
-
-.navbar .nav-link:hover,
-.navbar .nav-link.active {
-  color: #007bff;
-  font-weight: bold;
-}
-
-/* Notification Badge */
-#notification-badge {
-  font-size: 0.7rem;
-  padding: 0.3em 0.5em;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* Carousel Styling */
-.carousel-item img {
-  height: 85vh;
-  object-fit: cover;
-  filter: brightness(0.7);
-}
-
-.carousel-caption h1 {
-  font-size: 3.5rem;
-  font-weight: bold;
-}
-
-.carousel-caption h2 {
-  font-size: 1.8rem;
-}
-
-.carousel-fade .carousel-item {
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-
-.carousel-fade .carousel-item.active {
-  opacity: 1;
-}
-
-/* Footer Styling */
-footer {
-  background-color: #343a40;
-  color: #f8f9fa;
-}
-
-footer p {
-  margin: 0;
-}
-
-
-/* Navbar Styles */
-.navbar {
   background: linear-gradient(135deg, #007bff, #4a90e2); /* Gradasi warna */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-
 }
 
 .navbar .navbar-brand {
@@ -125,10 +53,6 @@ footer p {
   align-items: center;
 }
 
-.navbar .nav-link i {
-  margin-right: 5px;
-}
-
 .navbar .nav-link:hover {
   color: #fff; /* Putih saat hover */
   transform: translateY(-2px); /* Efek melayang */
@@ -138,7 +62,11 @@ footer p {
   color: #ffd700; /* Warna emas untuk item aktif */
 }
 
-/* Notifikasi Badge */
+.navbar .nav-link i {
+  margin-right: 5px;
+}
+
+/* Notification Badge */
 #notification-badge {
   font-size: 0.7rem;
   padding: 0.3em 0.5em;
@@ -148,9 +76,21 @@ footer p {
   right: 10%;
 }
 
-/* Responsive */
+
+
+/* Footer Styling */
+footer {
+  background-color: #343a40;
+  color: #f8f9fa;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsive Styling */
 @media (max-width: 768px) {
   .navbar {
-    border-radius: 0; /* Hilangkan border di mobile untuk tampilan penuh */
+      border-radius: 0; /* Hilangkan border di mobile untuk tampilan penuh */
   }
 }

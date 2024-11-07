@@ -27,12 +27,28 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav align-items-center">
           <li class="nav-item"><a class="nav-link active" href="#"><i class="fas fa-home me-1"></i>Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-map-signs me-1"></i>All Trips</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAllTrips" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">All Trips</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAllTrips">
+              <li><a class="dropdown-item active-page" href="#">Pantai Pangandaran</a></li>
+              <li><a class="dropdown-item" href="/Deskripsi/anyer.html">Pantai Anyer</a></li>
+              <li><a class="dropdown-item" href="/Deskripsi/karimunjawa.html">Pantai Karimun Jawa</a></li>
+              <li><a class="dropdown-item" href="/Deskripsi/bromo.html">Gunung Bromo</a></li>
+              <li><a class="dropdown-item" href="/Deskripsi/sindoro.html">Gunung Sindoro</a></li>
+              <li><a class="dropdown-item" href="/Deskripsi/ijen.html">Gunung Ijen</a></li>
+            </ul>
+          </li>
           <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="fas fa-images me-1"></i>Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-comments me-1"></i>Review</a></li>
-          <!-- Login/Logout Button -->
-          <li class="nav-item"><a id="authButton" class="nav-link" href="/app/login.html"><i class="fas fa-user me-1"></i><span id="authText">Login</span></a></li>
+         
+          
+          <li class="nav-item"><a class="nav-link" href="login.html" id="loginButton"><i class="fas fa-user me-1"></i>Login</a></li>
+
+          <!-- Profile Button (Hanya akan muncul saat login) -->
+          <li class="nav-item" id="profileNavItem" style="display: none;">
+            <a class="nav-link" href="#" id="profileButton"><i class="fas fa-user me-1"></i>Profile</a>
+          </li>
           <!-- Notifikasi -->
           <li class="nav-item position-relative">
             <a class="nav-link" href="#" id="notification-icon">
@@ -44,6 +60,21 @@
       </div>
     </div>
   </nav>
+
+  <div id="profileSidebar" class="profile-sidebar">
+    <button id="closeProfileSidebar" class="btn-close">&times;</button>
+    <div class="profile-content">
+      <div class="profile-pic-container">
+        <img id="profileImage" src="/path/to/default-profile.png" alt="Profile Picture" class="profile-pic">
+        <input type="file" id="uploadImage" accept="image/*" hidden>
+        <label for="uploadImage" class="upload-btn">Change Picture</label>
+      </div>
+      <h2 id="profileName">User Name</h2>
+      <p id="profileEmail">user@example.com</p>
+      <button id="logoutButton">Log Out</button>
+    </div>
+  </div>
+
 
   <!-- Hero Section with Carousel -->
   <div class="container-fluid p-0">
