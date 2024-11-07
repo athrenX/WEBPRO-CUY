@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pemesanan Tiket - Java Wonderland</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .sticky-footer {
+        position: sticky;
+        bottom: 0;
+        z-index: 1000;
+        width: 100%;
+        background-color: #1d689e;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .sticky-footer a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .sticky-footer a:hover {
+        text-decoration: underline;
+      }
+
+      .search-results {
+        margin-top: 20px;
+      }
+
+      .ticket-card {
+        border: 1px solid #dee2e6;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">Java Wonderland</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="Home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">All Trips</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="pemesanan.html">Pemesanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Review</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">Pemesanan Tiket</h2>
+      <form id="searchForm">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="departureDate" class="form-label"
+              >Tanggal Keberangkatan</label
+            >
+            <input
+              type="date"
+              class="form-control"
+              id="departureDate"
+              required
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="passengerCount" class="form-label"
+              >Jumlah Penumpang</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="passengerCount"
+              min="1"
+              value="1"
+              required
+            />
+          </div>
+        </div>
+        <button
+          type="button "
+          class="btn w-100" 
+          onclick="searchTickets()"
+          style="background-color: #1b548d; color: aliceblue;"
+          
+        >
+          Cari Tiket 
+        </button>
+      </form>
+
+      <div id="searchResults" class="search-results">
+        <!-- Results will be displayed here -->
+      </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function searchTickets() {
+        // Simulating search results
+        const resultsDiv = document.getElementById("searchResults");
+        resultsDiv.innerHTML = `
+          <div class="ticket-card">
+            <h5 class="fw-bold">Bandung - Bromo</h5>
+            <p><strong>Tanggal Keberangkatan:</strong> <span id="selectedDate"></span></p>
+            <p><strong>Jumlah Penumpang:</strong> <span id="selectedPassengers"></span></p>
+            <p><strong>Bus:</strong> SISIL</p>
+            <p><strong>Harga:</strong> Rp 210.000</p>
+            <p><strong>Jam Berangkat:</strong> 07:00 AM</p>
+            <button class="btn btn-success w-100" onclick="goToPayment()">Beli</button>
+          </div>
+        `;
+
+        const selectedDate = document.getElementById("departureDate").value;
+        const selectedPassengers =
+          document.getElementById("passengerCount").value;
+
+        document.getElementById("selectedDate").innerText = selectedDate;
+        document.getElementById("selectedPassengers").innerText =
+          selectedPassengers;
+      }
+
+      function goToPayment() {
+        window.location.href = "pembayaran.html";
+      }
+    </script>
+  </body>
+</html>
