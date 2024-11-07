@@ -1,6 +1,4 @@
 
-
-
 /* Global Styles */
 body {
   font-family: 'Poppins', sans-serif;
@@ -49,19 +47,6 @@ body {
   filter: brightness(0.7);
 }
 
-.carousel-caption {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start; /* Teks rata kiri */
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  padding-left: 20px; /* Tambahkan padding agar teks tidak terlalu mepet ke kiri */
-  color: #fff;
-  text-align: left;
-}
 
 
 .carousel-caption h1 {
