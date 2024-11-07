@@ -109,52 +109,41 @@ footer {
   text-align: center;
   margin-top: 20px; /* Memberikan jarak 20px di atas footer */
 }
-
-/* Pop-up Styling */
 .popup-bus {
   position: fixed;
-  bottom: -200px; /* Start hidden below screen */
   left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 400px;
-  background-color: #007bff;
+  bottom: -200px; /* Mulai tersembunyi di bawah */
+  transform: translateX(-50%); /* Memastikan popup berada di tengah secara horizontal */
+  background-color: #333;
   color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: bottom 0.5s ease;
   padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: bottom 0.5s ease-in-out;
-  z-index: 1000;
-}
-
-.popup-bus .popup-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
+  z-index: 1000;
+  width: 300px;
 }
 
-.popup-bus h5 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+/* Styling untuk ikon bus agar lebih rapi */
+.popup-bus .bus-icon {
+  font-size: 1.5em;
+  margin-right: 8px; /* Menambahkan jarak antara ikon bus dan teks */
+  vertical-align: middle;
 }
 
-.popup-bus p {
-  font-size: 1rem;
+.popup-content h5 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #ffd700;
+}
+
+.popup-content p {
+  font-size: 0.9em;
   margin-bottom: 15px;
 }
 
 #closePopup {
-  background-color: #ffc107;
-  color: #333;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-#closePopup:hover {
-  background-color: #ff9800;
+  font-size: 0.9em;
+  padding: 5px 10px;
 }
