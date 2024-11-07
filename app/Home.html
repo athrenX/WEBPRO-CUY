@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/app/css/home.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body class="d-flex flex-column min-vh-100">
 
@@ -28,10 +31,9 @@
           <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="fas fa-images me-1"></i>Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-comments me-1"></i>Review</a></li>
-          <li class="nav-item"><a class="nav-link" href="login.html"><i class="fas fa-user me-1"></i>Login</a></li>
-          <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
-         
-          <!-- Ikon Notifikasi -->
+          <!-- Login/Logout Button -->
+          <li class="nav-item"><a id="authButton" class="nav-link" href="#"><i class="fas fa-user me-1"></i><span id="authText">Login</span></a></li>
+          <!-- Notifikasi -->
           <li class="nav-item position-relative">
             <a class="nav-link" href="#" id="notification-icon">
               <i class="fas fa-bell fa-lg"></i>
@@ -42,7 +44,6 @@
       </div>
     </div>
   </nav>
-  
 
   <!-- Hero Section with Carousel -->
   <div class="container-fluid p-0">
@@ -59,7 +60,7 @@
         <div class="carousel-item active">
           <img src="/Componen/gambar bromo.jpeg" class="d-block w-100" alt="Gunung Bromo">
           <div class="carousel-caption d-none d-md-block">
-            <h2 id="userGreeting" class="display-5 text-light">Hi, Travelers</h2> <!-- ID untuk greeting -->
+            <h2 id="userGreeting" class="display-5 text-light">Hi, Travelers</h2>
             <h1 class="display-1 fw-bold text-light">BROMO</h1>
           </div>
         </div>
@@ -91,17 +92,73 @@
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="bg-dark mt-auto py-3 text-center text-light">
-    <div class="container">
-      <p class="mb-0">&copy; 2024 Java Wonderland. All Rights Reserved.</p>
+  <!-- Pop-up Notification -->
+  <div id="popupBus" class="popup-bus">
+    <div class="popup-content">
+      <h5>Special Offer!</h5>
+      <p>Book your next trip with Java Wonderland and get a 20% discount!</p>
+      <button id="closePopup" class="btn btn-primary">Close</button>
     </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Java Wonderland. All Rights Reserved.</p>
   </footer>
 
-  <!-- Custom JS -->
-
+  <!-- Custom JavaScript -->
   <script src="/app/js/Home.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Menampilkan pop-up setelah 3 detik
+      setTimeout(function() {
+        $('#popupBus').css('bottom', '20px'); // Menampilkan dari bawah layar
+      }, 3000);
+
+      // Menutup pop-up ketika tombol "Close" diklik
+      $('#closePopup').click(function() {
+        $('#popupBus').css('bottom', '-200px'); // Kembali tersembunyi di bawah layar
+      });
+    });
+  </script>
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Pop-up CSS -->
+  <style>
+    .popup-bus {
+      position: fixed;
+      left: 50%;
+      bottom: -200px;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: #fff;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      transition: bottom 0.5s ease;
+      padding: 20px;
+      text-align: center;
+      z-index: 1000;
+      width: 300px;
+    }
+
+    .popup-content h5 {
+      margin: 0;
+      font-size: 1.5em;
+      color: #ffd700;
+    }
+
+    .popup-content p {
+      font-size: 0.9em;
+      margin-bottom: 15px;
+    }
+
+    #closePopup {
+      font-size: 0.9em;
+      padding: 5px 10px;
+    }
+  </style>
+
 </body>
 </html>

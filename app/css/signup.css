@@ -106,7 +106,7 @@ footer p {
 .navbar {
   background: linear-gradient(135deg, #007bff, #4a90e2); /* Gradasi warna */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  border-radius: 0 0 10px 10px;
+ 
 }
 
 .navbar .navbar-brand {
