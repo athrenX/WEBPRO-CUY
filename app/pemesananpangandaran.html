@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/app/css/Pemesanan.css">
+    <link rel="stylesheet" href="/app/css/home.css">
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary-gradient shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-uppercase" href="#">Java Wonderland</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="#"><i class="fas fa-home me-1"></i>Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-map-signs me-1"></i>All Trips</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="fas fa-images me-1"></i>Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-comments me-1"></i>Review</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html"><i class="fas fa-user me-1"></i>Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+         
+          <!-- Ikon Notifikasi -->
+          <li class="nav-item position-relative">
+            <a class="nav-link" href="#" id="notification-icon">
+              <i class="fas fa-bell fa-lg"></i>
+              <span class="badge bg-danger position-absolute top-0 start-100 translate-middle" id="notification-badge" style="display: none;">1</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container py-5">
+        <h2 class="mb-4">Pemesanan Paket Perjalanan</h2>
+        
+        <div class="row">
+            <!-- Left Sidebar -->
+            <div class="col-md-3">
+                <div class="card booking-card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Vehicle Type</h5>
+                        <div class="category-item active" data-type="bus" data-base-price="2500">
+                            <div>
+                                <i class="fas fa-bus category-icon"></i>
+                                Bus
+                            </div>
+                            <span class="badge bg-light text-dark">45 seats</span>
+                        </div>
+                        <div class="category-item" data-type="minibus" data-base-price="3000">
+                            <div>
+                                <i class="fas fa-shuttle-van category-icon"></i>
+                                Mini Bus
+                            </div>
+                            <span class="badge bg-light text-dark">15 seats</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Summary Card -->
+                <div class="card booking-card booking-summary">
+                    <div class="card-body">
+                        <h5 class="card-title">Booking Summary</h5>
+                        <div class="summary-details mt-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Vehicle Type:</span>
+                                <span id="summaryVehicle">Bus</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Destination:</span>
+                                <span id="summaryDestination">-</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Distance:</span>
+                                <span id="summaryDistance">-</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Selected Seats:</span>
+                                <span id="summarySeats">0</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Base Price:</span>
+                                <span id="summaryBasePrice">IDR 0</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Distance Price:</span>
+                                <span id="summaryDistancePrice">IDR 0</span>
+                            </div>
+                            <div class="d-flex justify-content-between fw-bold">
+                                <span>Total Price:</span>
+                                <span id="summaryTotal">IDR 0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="col-md-9">
+                <!-- Destinations -->
+                <div class="card booking-card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Select Destination</h5>
+                        <div class="row g-3" id="destinationsContainer">
+                            <!-- Destinations will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seat Selection -->
+                <div class="card booking-card">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Select Seats</h5>
+                        <div id="seatLayout" class="mb-4">
+                            <!-- Seat layout will be populated here -->
+                        </div>
+
+                        <!-- Booking Form -->
+                        <form id="bookingForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" required placeholder="Enter your full name">
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" required placeholder="Enter your email">
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Departure Date</label>
+                                    <input type="date" class="form-control" required>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label class="form-label">Mobile Number</label>
+                                    <div class="input-group">
+                                        <select class="form-select" style="max-width: 120px;">
+                                            <option value="+62">+62</option>
+                                            <option value="+1">+1</option>
+                                            <option value="+44">+44</option>
+                                        </select>
+                                        <input type="tel" class="form-control" required placeholder="Enter mobile number">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                    Confirm Booking
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const destinations = [
+            {
+                id: 1,
+                name: 'Bandung - Pangandaran',
+                distance: 150,
+                image: '/api/placeholder/400/200',
+                basePrice: 150000
+            },
+            {
+                id: 2,
+                name: 'Bandung - Anyer',
+                distance: 450,
+                image: '/api/placeholder/400/200',
+                basePrice: 350000
+            },
+            {
+                id: 3,
+                name: 'Bandung - Karimunjawa',
+                distance: 550,
+                image: '/api/placeholder/400/200',
+                basePrice: 450000
+            },
+            {
+                id: 4,
+                name: 'Bandung - Bromo',
+                distance: 780,
+                image: '/api/placeholder/400/200',
+                basePrice: 650000
+            },
+            {
+                id: 5,
+                name: 'Bandung - Sindoro',
+                distance: 830,
+                image: '/api/placeholder/400/200',
+                basePrice: 700000
+            },
+            {
+                id: 6,
+                name: 'Bandung - kawah ijen',
+                distance: 1200,
+                image: '/api/placeholder/400/200',
+                basePrice: 1200000
+            }
+        ];
+
+        let selectedDestination = null;
+        let selectedVehicleType = 'bus';
+        let selectedSeats = new Set();
+
+        function initializeDestinations() {
+            const container = document.getElementById('destinationsContainer');
+            container.innerHTML = destinations.map(dest => `
+                <div class="col-md-4">
+                    <div class="card destination-card" data-destination-id="${dest.id}">
+                        <div class="position-relative">
+                            <img src="${dest.image}" class="destination-image w-100" alt="${dest.name}">
+                            <span class="distance-badge">
+                                <i class="fas fa-road"></i> ${dest.distance}km
+                            </span>
+                            <span class="price-badge">
+                                IDR ${dest.basePrice.toLocaleString()}
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title">${dest.name}</h6>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Add click handlers
+            document.querySelectorAll('.destination-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    document.querySelectorAll('.destination-card').forEach(c => c.classList.remove('selected'));
+                    this.classList.add('selected');
+                    selectedDestination = destinations.find(d => d.id === parseInt(this.dataset.destinationId));
+                    updateSeatLayout();
+                    updateSummary();
+                });
+            });
+        }
+
+        function updateSeatLayout() {
+            if (!selectedDestination) return;
+
+            const seatCount = selectedVehicleType === 'bus' ? 45 : 15;
+            const layoutClass = selectedVehicleType === 'bus' ? 'bus-layout' : 'minibus-layout';
+            
+            const layout = document.getElementById('seatLayout');
+            layout.innerHTML = `
+                <div class="seat-layout ${layoutClass}">
+                    ${Array.from({length: seatCount}, (_, i) => {
+                        const isOccupied = Math.random() < 0.3;
+                        return `
+                            <div class="seat ${isOccupied ? 'occupied' : ''}" data-seat="${i + 1}">
+                                <i class="fas fa-chair"></i>
+                                <div>Seat ${i + 1}</div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            `;
+
+            // Add click handlers for seats
+            document.querySelectorAll('.seat:not(.occupied)').forEach(seat => {
+                seat.addEventListener('click', function() {
+                    this.classList.toggle('selected');
+                    const seatNumber = parseInt(this.dataset.seat);
+                    if (this.classList.contains('selected')) {
+                        selectedSeats.add(seatNumber);
+                    } else {
+                        selectedSeats.delete(seatNumber);
+                    }
+                    updateSummary();
+                });
+            });
+        }
+
+        function updateSummary() {
+            if (!selectedDestination) return;
+
+            const basePrice = selectedVehicleType === 'bus' ? 2500 : 3000;
+            const distancePrice = basePrice * selectedDestination.distance;
+            const totalPrice = (selectedDestination.basePrice + distancePrice) * selectedSeats.size;
+
+            document.getElementById('summaryVehicle').textContent = selectedVehicleType === 'bus' ? 'Bus' : 'Mini Bus';
+            document.getElementById('summaryDestination').textContent = selectedDestination.name;
+            document.getElementById('summaryDistance').textContent = `${selectedDestination.distance}km`;
+            document.getElementById('summarySeats').textContent = selectedSeats.size;
+            document.getElementById('summaryBasePrice').textContent = `IDR ${selectedDestination.basePrice.toLocaleString()}`;
+            document.getElementById('summaryDistancePrice').textContent = `IDR ${distancePrice.toLocaleString()}`;
+            document.getElementById('summaryTotal').textContent = `IDR ${totalPrice.toLocaleString()}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeDestinations();
+
+            // Handle vehicle type selection
+            document.querySelectorAll('.category-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    document.querySelectorAll('.category-item').forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                    selectedVehicleType = this.dataset.type;
+                    updateSeatLayout();
+                    updateSummary();
+                });
+            });
+
+            // Handle booking form submission
+            const bookingForm = document.getElementById('bookingForm');
+            bookingForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                if (!selectedDestination || selectedSeats.size === 0) {
+                    alert("Please select a destination and at least one seat.");
+                    return;
+                }
+                
+                const formData = new FormData(bookingForm);
+                const bookingDetails = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    mobile: formData.get('mobile'),
+                    departureDate: formData.get('departureDate'),
+                    vehicleType: selectedVehicleType === 'bus' ? 'Bus' : 'Mini Bus',
+                    destination: selectedDestination.name,
+                    distance: selectedDestination.distance,
+                    seats: Array.from(selectedSeats),
+                    totalPrice: document.getElementById('summaryTotal').textContent
+                };
+
+                console.log('Booking Details:', bookingDetails);
+                alert('Booking Confirmed!\n\nDetails:\n' + JSON.stringify(bookingDetails, null, 2));
+
+                // Reset booking selections
+                selectedSeats.clear();
+                updateSeatLayout();
+                updateSummary();
+                bookingForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>

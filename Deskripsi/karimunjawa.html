@@ -1,137 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Karimunjawa - Java Wonderland</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <style>
-      .navbar {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karimunjawa Indonesia | Pesona Indonesia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="StyleeDes.css">
+    
 
-      .sticky-footer {
-        position: sticky;
-        bottom: 0;
-        z-index: 1000;
-        width: 100%;
-        background-color: #007bff;
-        text-align: center;
-        padding: 10px 0;
-      }
+</head>
+<body>
 
-      .sticky-footer a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      .content {
-        margin-bottom: 70px;
-      }
-
-      .image-banner {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-      }
-
-      .content p {
-        text-align: justify;
-      }
-
-      .sticky-footer a:hover {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html">Java Wonderland</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="Gambar WhatsApp 2024-10-14 pukul 13.01.32_caf87105.jpg" alt="𝙹𝚊𝚟𝚊 𝚆𝚘𝚗𝚍𝚎𝚛𝚕𝚊𝚗𝚍" width="50"> 𝙹𝚊𝚟𝚊 𝚆𝚘𝚗𝚍𝚎𝚛𝚕𝚊𝚗𝚍
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="Home.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">All Trips</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="gallery.html">Gallery</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Review</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
-            </li>
-          </ul>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/app/Home.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAllTrips" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">All Trips</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownAllTrips">
+                    <li><a class="dropdown-item active-page" href="karimunjawa.html">Pantai Karimunjawa</a></li>
+                    <li><a class="dropdown-item" href="pangandaran.html">Pantai Pangandaran</a></li>
+                    <li><a class="dropdown-item" href="anyer.html">Pantai Anyer</a></li>
+                    <li><a class="dropdown-item" href="bromo.html">Gunung Bromo</a></li>
+                    <li><a class="dropdown-item" href="sindoro.html">Gunung Sindoro</a></li>
+                    <li><a class="dropdown-item" href="ijen.html">Gunung Ijen</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#" style="pointer-events: none;">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Review</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about-us.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/app/login.html">Login</a>
+                </li>
+            </ul>
         </div>
-      </div>
-    </nav>
-
-    <div class="container mt-3">
-      <img src="karimun jawa.webp" class="image-banner" alt="Karimunjawa" />
     </div>
+  </nav>
+  
 
-    <div class="container content mt-4">
-      <h2 class="text-center mb-4">Wisata Karimunjawa</h2>
-      <p>
-        Karimunjawa adalah sebuah kepulauan yang terletak di Laut Jawa, terdiri dari 27 pulau yang sebagian besar belum
-        terjamah. Pulau-pulau ini menawarkan pantai yang indah, air laut yang jernih, serta terumbu karang yang kaya akan
-        kehidupan bawah laut, menjadikannya tujuan favorit bagi para penyelam dan pecinta snorkeling.
-      </p>
-      <p>
-        Beberapa kegiatan yang dapat dinikmati di Karimunjawa termasuk berenang di pantai yang tenang, menyelam di antara
-        terumbu karang, atau mengunjungi pulau-pulau kecil dengan perahu tradisional. Selain itu, wisatawan dapat menikmati
-        kuliner seafood segar yang ditawarkan oleh penduduk setempat.
-      </p>
-      <p>
-        Karimunjawa juga terkenal dengan suaka margasatwa lautnya, yang melindungi spesies langka seperti penyu hijau dan
-        penyu sisik. Pulau ini adalah surga bagi para pecinta alam dan mereka yang mencari pengalaman wisata yang jauh
-        dari hiruk-pikuk perkotaan.
-      </p>
 
-      <h3 class="mt-5">Cara Menuju Karimunjawa</h3>
-      <p>
-        Karimunjawa dapat dicapai dengan kapal feri dari Pelabuhan Jepara atau Semarang. Terdapat juga penerbangan
-        langsung ke Bandara Dewadaru di Karimunjawa dari Semarang. Setelah tiba, wisatawan bisa mengelilingi pulau dengan
-        perahu sewaan atau berjalan kaki.
-      </p>
-
-      <h3 class="mt-5">Tips Berwisata di Karimunjawa</h3>
-      <ul>
-        <li>Pastikan untuk membawa perlengkapan snorkeling atau diving jika ingin menjelajahi keindahan bawah laut.</li>
-        <li>Bawa perlengkapan dasar seperti obat nyamuk dan sunblock untuk melindungi diri dari gigitan serangga dan
-          paparan sinar matahari.</li>
-        <li>Periksa jadwal kapal feri sebelumnya, karena perjalanan bisa terganggu oleh cuaca buruk.</li>
-      </ul>
+<!-- Hero -->
+<section class="hero">
+    <video src="/Componen/Video karimun jawa.mp4" autoplay muted loop playsinline></video>
+    <div class="container text-center">
+        <h1 class="hero-title">Karimunjawa</h1>
+        <p class="hero-description lead">Temukan keajaiban Pantai Karimun Jawa, pantai dengan sejuta pesona alam yang memukau.</p>
     </div>
+</section>
 
-    <div class="sticky-footer">
-      <a href="pemesanan.html" class="btn">Pesan Sekarang</a>
+
+<!-- Breadcrumbs -->
+<section class="breadcrumbs bg-light py-2">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#">Beranda</a></li>
+                <li class="breadcrumb-item"><a href="#">Destinasi</a></li>
+                <li class="breadcrumb-item"><a href="#">Karimunjawa | Destinasi Eksotis</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Karimun Jawa</li>
+            </ol>
+        </nav>
     </div>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+<!-- Pembukaan -->
+<section class="content py-5">
+    <div class="container">
+        <h2 class="text-center">Karimunjawa, Surga Tropis di Laut Jawa</h2>
+        <p class="text-center">Rasakan pesona alam yang luar biasa dan keindahan bawah laut di Karimunjawa, destinasi wisata tropis yang tak terlupakan.</p>
+    </div>
+</section>
+
+<!-- Daya Tarik -->
+<section class="attractions py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Daya Tarik Pantai Karimunjawa</h2>
+        
+        <!-- Daya Tarik pertama -->
+        <div class="row align-items-center mb-5 scroll-animation">
+            <div class="col-md-6">
+                <img src="/Componen/kekayaankarimun.jpg" class="img-fluid rounded" alt="Kekayaan Bawah Laut">
+            </div>
+            <div class="col-md-6">
+                <h4>Kekayaan Bawah Laut yang Menakjubkanr</h4>
+                <p>Pulau-pulau di sekitar Karimun Jawa, seperti Menjangan Kecil, adalah surga bagi para penyelam dengan dinding-dinding terumbu karang vertikal yang menakjubkan dan populasi ikan yang melimpah. Pemandangan bawah laut yang memukau ini membuat Karimun Jawa menjadi destinasi impian bagi mereka yang ingin merasakan kehidupan bawah laut yang berwarna-warni dan penuh keajaiban.</p>
+            </div>
+        </div>
+
+        <!-- Daya Tarik Kedua -->
+        <div class="row align-items-center mb-5 scroll-animation">
+            <div class="col-md-6 order-md-2">
+              <img src="/Componen/KulinerKarimun.jpg" class="img-fluid rounded" alt="Festival Budaya Pangandaran">
+            </div>
+            <div class="col-md-6 order-md-1">
+                <h4>Kuliner dengan Makanan Laut Segar</h4>
+                <p>Karimun Jawa memiliki kejutan lezat dengan hidangan-hidangan laut segar. Ikan bakar menjadi pilihan utama, di mana ikan segar dipanggang dengan rempah-rempah khas, menciptakan cita rasa yang tak terlupakan. Kuliner dengan Makanan Laut Segar Karimunjawa Tidak hanya ikan, berbagai hidangan laut lainnya seperti kepiting, udang, dan kerang juga bisa dinikmati dengan cita rasa autentik dan segar.</p>
+            </div>
+        </div>
+
+        <!-- Daya tarik Ketiga -->
+        <div class="row align-items-center scroll-animation">
+            <div class="col-md-6">
+              <video src="/Componen/terumbukarang.mp4" class="img-fluid rounded" autoplay muted loop></video>
+            </div>
+            <div class="col-md-6">
+                <h4>Terumbu Karang yang Mempesona</h4>
+                <p> Terumbu karang Karimun Jawa adalah seperti galeri seni alami di bawah laut, menampilkan formasi dan warna yang luar biasa. Terumbu karang ini tidak hanya indah secara visual, tetapi juga berperan penting dalam menjaga ekosistem laut yang seimbang.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Bagian Kegiatan -->
+<section class="activities py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Kegiatan Seru di Karimunjawa</h2>
+        <div class="row g-4">
+            <!-- Kegiatan Berenang Bersama Hiu -->
+            <div class="col-md-4 scroll-animation">
+                <div class="activity-card">
+                    <img src="/Componen/BerenangHiu.jpg" class="img-fluid activity-img" alt="Berenang Bersama Hiu">
+                    <h4 class="mt-3">Berenang Bersama Hiu</h4>
+                    <p>Cocok Bagi kamu yang suka menantang adrenaline! Di pulau ini terdapat penangkaran hiu, di mana kamu bisa berenang bersama hiu-hiu kecil di sana.</p>
+                    <br>
+                  </div>
+            </div>
+
+            <!-- Kegiatan Bertemu Nemo -->
+            <div class="col-md-4 scroll-animation">
+                <div class="activity-card">
+                    <img src="/Componen/nemo.jpg" class="img-fluid activity-img" alt="Bertemu Nemo">
+                    <h4 class="mt-3">Bertemu Nemo</h4>
+                    <p>Apakah kamu tahu film “Finding Nemo”? Ikan dengan corak oranye dan hitam ini begitu ikonik di film tersebut. Jika kamu ingin melihat ikan nemo secara langsung, kamu bisa mengunjungi Pulau Seruni.</p>
+                </div>
+            </div>
+
+            <!-- Kegiatan Menikmati Sunset -->
+            <div class="col-md-4 scroll-animation">
+                <div class="activity-card">
+                    <img src="/Componen/sunsetKarimun.jpg" class="img-fluid activity-img" alt="Sunset">
+                    <h4 class="mt-3">Menikmati Sunset</h4>
+                    <p> Suasana sekitar pantai yang rindang karena ditumbuhi banyaknya pohon kelapa dan ombak yang tenang membuat Pantai di Karimunjawa menjadi spot terbaik untuk healing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer class="footer bg-dark text-light py-4">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h5>Contact Us</h5>
+                <p>Email: info@javawonderland.com</p>
+                <p>Phone: +62 123 456 789</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Follow Us</h5>
+                <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#" class="text-light"><i class="fab fa-twitter"></i> Twitter</a>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>About Us</h5>
+                <p>Discover the beauty of Indonesia through curated tours in breathtaking destinations.</p>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <p>&copy; 2024 Pangandaran | Java Wonderland. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<button class="pesan-sekarang-btn" onclick="window.location.href='/app/pemesanan.html';">Pesan Sekarang</button>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+    let timeout;
+    const navbar = document.querySelector('.navbar');
+    const pesanButton = document.querySelector('.pesan-sekarang-btn');
+  
+    // Fungsi untuk menyembunyikan navbar dan tombol pesan setelah beberapa detik tidak ada aktivitas
+    function hideElements() {
+        navbar.classList.add('hidden');  // Menambahkan kelas untuk menyembunyikan navbar
+        pesanButton.classList.add('hidden');  // Menambahkan kelas untuk menyembunyikan tombol pesan
+    }
+  
+    // Fungsi untuk menampilkan navbar dan tombol pesan ketika ada aktivitas
+    function showElements() {
+        navbar.classList.remove('hidden');  // Menghapus kelas untuk menampilkan navbar
+        pesanButton.classList.remove('hidden');  // Menghapus kelas untuk menampilkan tombol pesan
+        clearTimeout(timeout);  // Menghentikan timer hideElements
+        timeout = setTimeout(hideElements, 3000);  // Mengatur untuk menyembunyikan navbar dan tombol pesan setelah 3 detik tidak ada aktivitas
+    }
+  
+    // Deteksi scroll atau pergerakan mouse untuk navbar dan tombol pesan
+    window.addEventListener('scroll', showElements);  // Menampilkan navbar dan tombol pesan saat scroll
+    window.addEventListener('mousemove', showElements);  // Menampilkan navbar dan tombol pesan saat ada pergerakan mouse
+  
+    // Menyembunyikan navbar dan tombol pesan saat halaman pertama kali dimuat
+    timeout = setTimeout(hideElements, 3000);  // Navbar dan tombol pesan akan tersembunyi setelah 3 detik pertama
+
+    window.addEventListener('scroll', () => {
+        const elements = document.querySelectorAll('.scroll-animation');
+        elements.forEach((element) => {
+            const position = element.getBoundingClientRect();
+            if (position.top < window.innerHeight && position.bottom >= 0) {
+                element.classList.add('animate');
+            }
+        });
+    });
+  </script>
+  
+</body>
 </html>
+

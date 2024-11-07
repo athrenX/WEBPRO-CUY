@@ -1,0 +1,304 @@
+
+
+.navbar {
+    background-color: transparent !important;
+    transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+
+.navbar.expanded {
+    width: 100%;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1rem 2rem;
+}
+
+
+.navbar:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: rgb(11, 11, 11) !important;
+}
+
+
+.navbar .nav-link:hover {
+    color: #0040ff !important; 
+}
+
+.navbar .all-trips-menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+}
+
+.navbar.expanded .all-trips-menu {
+    display: block;
+}
+
+.navbar .all-trips-menu li a {
+    color: #333;
+    display: block;
+    padding: 0.5rem 0;
+    text-decoration: none;
+}
+
+.navbar .all-trips-menu li a:hover {
+    color: #ff5722;
+}
+
+.dropdown-item.active-page {
+    opacity: 0.5;
+    pointer-events: none; 
+}
+
+.navbar.hidden {
+    transform: translateY(-100%); /* Menyembunyikan navbar dengan geser ke atas */
+    transition: transform 0.3s ease; /* Transisi halus saat menghilang */
+}
+
+/*Hero Section*/
+.hero {
+    margin-top: 0;
+    transition: margin-top 0.3s ease;
+}
+
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero h1, .hero p {
+    z-index: 1;
+}
+.hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Breadcrumbs */
+.breadcrumbs {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.breadcrumb-item a {
+    color: #007bff;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
+}
+.hero {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Additional styling for new sections */
+
+.attractions h4 {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.attractions p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.attractions img, .attractions video {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .attractions .row {
+        flex-direction: column;
+    }
+}
+/* Styling untuk Bagian Kegiatan */
+.activities .activity-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.activities .activity-card img.activity-img {
+    width: 100%; /* Membuat gambar responsif */
+    height: 200px; /* Menetapkan tinggi yang sama untuk semua gambar */
+    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.activities h4 {
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}
+
+.activities p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+    .activities .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .activities .activity-card {
+        text-align: center;
+        padding: 20px;
+    }
+}
+
+/* Styling untuk ikon sosial media */
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ff5722; /* Warna hover untuk ikon */
+}
+
+.footer .bi {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.footer i {
+    font-size: 1.5rem;  /* Ukuran ikon lebih besar */
+    margin-right: 10px;  /* Jarak antara ikon dan teks */
+}
+
+
+/* Tombol Pesan Sekarang */
+.pesan-sekarang-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.3s ease;
+    z-index: 1000;
+    opacity: 1;
+}
+
+/* Button pesan */
+  .pesan-sekarang-btn.hidden {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+    pointer-events: none; 
+}
+
+.pesan-sekarang-btn:hover {
+    background-color: #e64a19;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.1); /* Membuat tombol sedikit lebih besar */
+    background-color: #0056b3; /* Mengubah warna background */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transisi halus */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-animation {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.scroll-animation.animate {
+    opacity: 1;
+    animation: fadeInUp 1s forwards;
+}
+
+/* Animasi untuk teks di bagian Hero */
+.hero-title, .hero-description {
+    opacity: 0;
+    transform: translateY(20px); /* Menggeser teks sedikit ke bawah untuk efek masuk */
+    animation: fadeInUp 1s forwards; /* Menggunakan animasi fadeInUp */
+    animation-delay: 0.5s; /* Menambahkan delay agar animasi tidak langsung */
+}
+
+.hero-title {
+    animation-delay: 1s; /* Memberikan delay sedikit lebih lama pada judul */
+}
+
+.hero-description {
+    animation-delay: 1.5s; /* Memberikan delay sedikit lebih lama pada deskripsi */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Mulai dari bawah */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Bergerak ke posisi normal */
+    }
+}
