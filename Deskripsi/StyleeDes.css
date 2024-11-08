@@ -249,7 +249,7 @@
     cursor: pointer;
 }
 
-button:hover {
+.btn:hover {
     transform: scale(1.1); /* Membuat tombol sedikit lebih besar */
     background-color: #0056b3; /* Mengubah warna background */
     transition: transform 0.3s ease, background-color 0.3s ease; /* Transisi halus */
@@ -301,4 +301,25 @@ button:hover {
         opacity: 1;
         transform: translateY(0); /* Bergerak ke posisi normal */
     }
+}
+
+  /* Animasi scroll reveal */
+  .scroll-animation {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.scroll-animation.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efek hover pada kartu */
+.activity-card {
+    transition: all 0.3s ease;
+}
+
+.activity-card.scale-up {
+    transform: scale(1.05);
 }
