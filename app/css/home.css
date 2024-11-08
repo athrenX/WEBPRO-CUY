@@ -67,7 +67,8 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   height: 100%;
-  padding: 50px 20px 30px; /* padding-top, padding-left, padding-bottom */
+  padding: 50px 20px 30px;
+  /* padding-top, padding-left, padding-bottom */
   color: #fff;
   text-align: center;
 }
@@ -166,7 +167,7 @@ footer {
   margin-bottom: 15px;
   border: 2px solid #ffd700;
   display: inline-block;
-  align-items:center;
+  align-items: center;
   justify-content: center;
   margin-left: 21px;
 }
@@ -178,7 +179,7 @@ footer {
   cursor: pointer;
   margin-top: 30px;
   margin-bottom: 50px;
-  
+
 }
 
 .btn-close {
@@ -211,27 +212,35 @@ footer {
 
 /* Responsive Styling for Small Screens */
 @media (max-width: 768px) {
+
   /* Posisikan teks carousel di bagian atas pada layar kecil */
   .carousel-caption {
-    justify-content: flex-start; /* Posisi teks di bagian atas */
-    padding-top: 30px; /* Tambahkan padding dari atas */
-    padding-left: 20px; /* Mengurangi padding di kiri */
-    padding-bottom: 20px; /* Mengurangi padding di bawah */
+    justify-content: flex-start;
+    /* Posisi teks di bagian atas */
+    padding-top: 30px;
+    /* Tambahkan padding dari atas */
+    padding-left: 20px;
+    /* Mengurangi padding di kiri */
+    padding-bottom: 20px;
+    /* Mengurangi padding di bawah */
     text-align: left;
   }
 
   /* Ukuran Font pada layar kecil */
   .carousel-caption h1 {
-    font-size: 2rem; /* Ukuran font judul lebih kecil */
+    font-size: 2rem;
+    /* Ukuran font judul lebih kecil */
   }
 
   .carousel-caption h2 {
-    font-size: 1.2rem; /* Ukuran font subjudul lebih kecil */
+    font-size: 1.2rem;
+    /* Ukuran font subjudul lebih kecil */
   }
 }
 
 /* Responsive Styling for Very Small Screens */
 @media (max-width: 576px) {
+
   /* Lebih kecil lagi untuk perangkat sangat kecil */
   .carousel-caption h1 {
     font-size: 1.5rem;
@@ -243,7 +252,7 @@ footer {
 
   /* Mengurangi padding untuk menghemat ruang */
   .carousel-caption {
-    padding-top: 40px;
+    padding-top: 20x;
     padding-left: 10px;
     padding-bottom: 15px;
   }
