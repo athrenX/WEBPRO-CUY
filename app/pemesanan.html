@@ -326,7 +326,7 @@
         
         const formData = new FormData(bookingForm);
         const bookingDetails = {
-            name: formData.get('name'),
+            name: formData.get('costumerName'),
             email: formData.get('email'),
             mobile: formData.get('mobile'),
             departureDate: formData.get('departureDate'),
@@ -354,7 +354,7 @@
     const formData = new FormData(bookingForm);
     const bookingDetails = {
         orderNumber: 'JW-' + Date.now(), // Generate unique order number
-        name: formData.get('name'),
+        name: formData.get('costumerName'),
         email: formData.get('email'),
         mobile: formData.get('mobile'),
         departureDate: formData.get('departureDate'),
@@ -367,12 +367,28 @@
         departureTime: '08:00 WIB'
     };
 
-    // Simpan detail pemesanan ke Local Storage
+    // Save booking details to Local Storage
     localStorage.setItem('bookingDetails', JSON.stringify(bookingDetails));
 
-    // Redirect ke halaman pembayaran
+    // Redirect to payment page
     window.location.href = 'pembayaran.html';
 });
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Retrieve booking details from local storage
+//     const bookingDetails = JSON.parse(localStorage.getItem('bookingDetails'));
+//     if (bookingDetails) {
+//         document.getElementById('bookingCode').textContent = bookingDetails.orderNumber;
+//         document.getElementById('packageName').textContent = bookingDetails.destination;
+//         document.getElementById('departureTime').textContent = bookingDetails.departureTime;
+//         document.getElementById('customerName').textContent = bookingDetails.name;
+//         document.getElementById('totalAmount').textContent = bookingDetails.totalPrice;
+//         document.getElementById('departureDate').textContent = bookingDetails.departureDate;
+//     } else {
+//         alert('No booking details found!');
+//         window.location.href = 'pemesanan.html'; // Redirect if no booking details
+//     }
+// });
     </script>
 </body>
 </html>

@@ -1,156 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pembayaran Tiket - Java Wonderland</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Link Font Awesome untuk ikon -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMet45jR9ErlCMrv7gjD0W9DAy5vj/bQbzTR3F5"
-      crossorigin="anonymous"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfirmasi Pembayaran</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/app/css/Pemesanan.css">
+    <link rel="stylesheet" href="/app/css/home.css">
     <style>
-      .navbar {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
-
-      .sticky-footer {
-        position: sticky;
-        bottom: 0;
-        z-index: 1000;
-        width: 100%;
-        background-color: #007bff;
-        text-align: center;
-        padding: 10px 0;
-      }
-
-      .sticky-footer a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      .sticky-footer a:hover {
-        text-decoration: underline;
-      }
-
-      .payment-section {
-        margin-top: 20px;
-      }
-
-      .form-control:focus {
-        box-shadow: none;
-      }
-
-      .btn-primary:focus {
-        box-shadow: none;
-      }
+        #previewImage {
+            max-width: 100%;
+            height: auto;
+            display: none;
+        }
+        .bank-option {
+            cursor: pointer;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .bank-option.selected {
+            background-color: #007bff;
+            color: white;
+        }
     </style>
-  </head>
-  <body class="d-flex flex-column min-vh-100">
+</head>
+<body class="bg-light">
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-      <div class="container">
-        <a class="navbar-brand fw-bold text-uppercase" href="#">Java Wonderland</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav align-items-center">
-            <li class="nav-item">
-              <a class="nav-link active" href="#"><i class="fas fa-home me-1"></i>Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-map-signs me-1"></i>All Trips</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="gallery.html"><i class="fas fa-images me-1"></i>Gallery</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-info-circle me-1"></i>About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-comments me-1"></i>Review</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
-            </li>
-            <!-- Ikon Notifikasi -->
-            <li class="nav-item position-relative">
-              <a class="nav-link" href="#" id="notification-icon">
-                <i class="fas fa-bell fa-lg"></i>
-                <span
-                  class="badge bg-danger position-absolute top-0 start-100 translate-middle"
-                  id="notification-badge"
-                  style="display: none;"
-                >1</span>
-              </a>
-            </li>
-          </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-gradient shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase" href="#">Java Wonderland</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="Home.html"><i class="fas fa-home me-1"></i>Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#"><i class="fas fa-ticket-alt me-1"></i>Pemesanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="fas fa-images me-1"></i>Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutus.html"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
+                    <li class="nav-item position-relative">
+                        <a class="nav-link" href="#" id="notification-icon">
+                            <i class="fas fa-bell fa-lg"></i>
+                            <span class="badge bg-danger position-absolute top-0 start-100 translate-middle" id="notification-badge" style="display: none;">1</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
-    <div class="container mt-5">
-      <h2 class="text-center mb-4">Pembayaran Tiket</h2>
-      <div class="row justify-content-center payment-section">
-        <div class="col-md-6">
-          <div class="card p-4 shadow-sm">
-            <h5 class="card-title">Detail Pembayaran</h5>
-            <!-- Form with action attribute to redirect on submission -->
-            <form action="lanjutanpembayaran.html" method="get">
-              <div class="mb-3">
-                <label for="fullName" class="form-label">Nama Lengkap</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="fullName"
-                  placeholder="Masukkan nama lengkap"
-                  required
-                />
+    <div class="container py-5">
+        <h2 class="mb-4">Konfirmasi Pembayaran</h2>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-container">
+                    <!-- Informasi Pemesanan -->
+                    <div class="booking-info mb-4">
+                        <h5>Detail Pemesanan</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><strong>Kode Booking:</strong> <span id="bookingCode"></span></p>
+                                <p><strong>Paket:</strong> <span id="packageName"></span></p>
+                                <p><strong>Jam Keberangkatan:</strong> <span id="departureTime"></span></p>
+                                <p><strong>Atas Nama:</strong> <span id="customerName"></span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><strong>Total:</strong> <span id="totalAmount"></span></p>
+                                <p><strong>Status:</strong> Menunggu Pembayaran</p>
+                                <p><strong>Titik Kumpul:</strong> Terminal Bandung</p>
+                                <p><strong>Tanggal Keberangkatan:</strong> <span id="departureDate"></span
+                                </p>
+                              </div>
+                          </div>
+                      </div>
+  
+                      <!-- Form Konfirmasi Pembayaran -->
+                      <form id="paymentForm">
+                          <div class="mb-4">
+                              <label class="form-label">Pilih Bank</label>
+                              <div class="row">
+                                  <div class="col-6">
+                                      <div class="bank-option" data-bank="BCA">
+                                          <strong>Bank BCA</strong>
+                                          <p class="mb-0">1234-5678-90</p>
+                                      </div>
+                                  </div>
+                                  <div class="col-6">
+                                      <div class="bank-option" data-bank="Mandiri">
+                                          <strong>Bank Mandiri</strong>
+                                          <p class="mb-0">0987-6543-21</p>
+                                      </div>
+                                  </div>
+                                  <div class="col-6">
+                                      <div class="bank-option" data-bank="BRI">
+                                          <strong>Bank BRI</strong>
+                                          <p class="mb-0">0925-8720-12</p>
+                                      </div>
+                                  </div>
+                                  <div class="col-6">
+                                      <div class="bank-option" data-bank="BTN">
+                                          <strong>Bank BTN</strong>
+                                          <p class="mb-0">1246-1375-00</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+  
+                          <div class="mb-3">
+                              <label class="form-label">Nama Pengirim</label>
+                              <input type="text" class="form-control" id="senderName" required placeholder="Masukkan nama pengirim">
+                          </div>
+                          <div class="mb-3">
+                              <label class="form-label">Bukti Transfer</label>
+                              <input type="file" class="form-control" id="proofImage" accept="image/*">
+                              <img id="previewImage" src="" alt="Preview Gambar Bukti Transfer">
+                          </div>
+  
+                          <div class="mt-4">
+                              <button type="submit" class="btn btn-primary btn-lg w-100">Konfirmasi Pembayaran</button>
+                          </div>
+                      </form>
+                  </div>
               </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  placeholder="Masukkan email"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="paymentMethod" class="form-label">Metode Pembayaran</label>
-                <select class="form-select" id="paymentMethod" required>
-                  <option value="" disabled selected>Pilih metode pembayaran</option>
-                  <option value="qris">QRIS</option>
-                </select>
-              </div>
-              <div class="text-center">
-                <button type="submit" class="btn btn-primary w-100">Lanjutkan Pembayaran</button>
-              </div>
-            </form>
           </div>
-        </div>
       </div>
-    </div>
+  
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              // Retrieve booking details from local storage
+              const bookingDetails = JSON.parse(localStorage.getItem('bookingDetails'));
+              if (bookingDetails) {
+                  document.getElementById('bookingCode').textContent = bookingDetails.orderNumber;
+                  document.getElementById('packageName').textContent = bookingDetails.destination;
+                  document.getElementById('departureTime').textContent = '08:00 WIB'; // You can customize this
+                  document.getElementById('customerName').textContent = bookingDetails.name;
+                  document.getElementById('totalAmount').textContent = bookingDetails.totalPrice;
+                  document.getElementById('departureDate').textContent = bookingDetails.departureDate;
+                  document.getElementById('CustomerNa,').textContent = bookingDetails.departureDate;
+              } else {
+                  alert('No booking details found!');
+                  window.location.href = 'pemesanan.html'; // Redirect if no booking details
+              }
+  
+              // Bank selection
+              document.querySelectorAll('.bank-option').forEach(option => {
+                  option.addEventListener('click', function() {
+                      document.querySelectorAll('.bank-option').forEach(opt => opt.classList.remove('selected'));
+                      this.classList.add('selected');
+                  });
+              });
+  
+              // Amount input formatting
+              document.getElementById('amount').addEventListener('input', function() {
+                  let value = this.value.replace(/\D/g, '');
+                  if (value === '') return;
+  
+                  this.value = new Intl.NumberFormat('id-ID').format(value);
+  
+                  // Validate amount
+                  if (parseInt(value) !== 210000) {
+                      document.getElementById('amountError').style.display = 'block';
+                  } else {
+                      document.getElementById('amountError').style.display = 'none';
+                  }
+              });
+  
+              // Image preview
+              document.getElementById('proofImage').addEventListener('change', function() {
+                  const file = this.files[0];
+                  if (file) {
+                      const reader = new FileReader();
+                      reader.onload = function(e) {
+                          document.getElementById('previewImage').
+                          document.getElementById('previewImage').src = e.target.result;
+                        document.getElementById('previewImage').style.display = 'block';
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+            // Handle payment form submission
+            const paymentForm = document.getElementById('paymentForm');
+            paymentForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const selectedBank = document.querySelector('.bank-option.selected');
+                if (!selectedBank) {
+                    alert("Please select a bank.");
+                    return;
+                }
+
+                const senderName = document.getElementById('senderName').value;
+                const amount = document.getElementById('amount').value.replace(/\D/g, ''); // Remove non-digit characters
+                const proofImage = document.getElementById('proofImage').files[0];
+
+                // Validate amount
+                if (parseInt(amount) !== 210000) { // Replace 210000 with your expected amount
+                    alert("Jumlah transfer tidak sesuai!");
+                    return;
+                }
+
+                if (!proofImage) {
+                    alert("Please upload a proof of transfer.");
+                    return;
+                }
+
+                // Here you can handle the payment processing logic
+                alert(`Payment confirmed!\n\nBank: ${selectedBank.dataset.bank}\nSender Name: ${senderName}\nAmount: IDR ${new Intl.NumberFormat('id-ID').format(amount)}`);
+
+                // Clear local storage after successful payment
+                localStorage.removeItem('bookingDetails');
+
+                // Redirect to a success page or home page
+                window.location.href = 'pembayaransukses.html'; // Change to your success page
+            });
+        });
+    </script>
+</body>
 </html>
