@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berikan Rating dan Ulasan | Java Wonderland</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="StyleeDes.css">
+    <link rel="stylesheet" href="/app/css/rating.css">
+    <link rel="stylesheet" href="/app/css/home.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase" href="#">Java Wonderland</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="Home.html"><i class="fas fa-home me-1"></i>Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="fas fa-images me-1"></i>Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reviews.html"><i class="fas fa-comments me-1"></i>Review</a></li>
+                    <!-- Login/Logout Button -->
+                    <li class="nav-item"><a id="authButton" class="nav-link" href="#"><i class="fas fa-user me-1"></i><span id="authText">Login</span></a></li>
+                    <!-- Notifikasi -->
+                    <li class="nav-item position-relative">
+                        <a class="nav-link" href="#" id="notification-icon">
+                            <i class="fas fa-bell fa-lg"></i>
+                            <span class="badge bg-danger position-absolute top-0 start-100 translate-middle" id="notification-badge" style="display: none;">1</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5 pt-5">
+        <h1 class="text-center mb-5">Berikan Rating dan Ulasan</h1>
+
+        <!-- Pilihan Destinasi -->
+        <div class="row mb-4">
+            <div class="col-md-6 offset-md-3">
+                <div class="form-group">
+                    <label for="destination-select">Pilih Destinasi:</label>
+                    <select class="form-control" id="destination-select">
+                        <option value="">Pilih Destinasi</option>
+                        <option value="pangandaran">Pangandaran</option>
+                        <option value="anyer">Pantai Anyer</option>
+                        <option value="karimunjawa">Pantai Karimun Jawa</option>
+                        <option value="bromo">Gunung Bromo</option>
+                        <option value="sindoro">Gunung Sindoro</option>
+                        <option value="ijen">Gunung Ijen</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rating dan Ulasan -->
+        <div class="row mb-4">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Berikan Rating</h5>
+                        <div class="rating mb-3">
+                            <i class="fas fa-star" data-rating="1"></i>
+                            <i class="fas fa-star" data-rating="2"></i>
+                            <i class="fas fa-star" data-rating="3"></i>
+                            <i class="fas fa-star" data-rating="4"></i>
+                            <i class="fas fa-star" data-rating="5"></i>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="review-textarea">Tulis Ulasan:</label>
+                            <textarea class="form-control" id="review-textarea" rows="3" placeholder="Tulis ulasan Anda di sini..."></textarea>
+                        </div>
+                        <button class="btn btn-primary mt-3" id="submit-review">Kirim</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer bg-dark text-light py-4">
+        <footer class="footer bg-dark text-light py-4">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <h5>Contact Us</h5>
+                        <p>Email: info@javawonderland.com</p>
+                        <p>Phone: +62 123 456 789</p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5>Follow Us</h5>
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i> Facebook</a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i> Instagram</a>
+                        <a href="#" class="text-light"><i class="fab fa-twitter"></i> Twitter</a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5>About Us</h5>
+                        <p>Discover the beauty of Indonesia through curated tours in breathtaking destinations.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <p>&copy; 2024 | Java Wonderland. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const stars = document.querySelectorAll('.rating i');
+        const reviewTextarea = document.getElementById('review-textarea');
+        const submitButton = document.getElementById('submit-review');
+        const destinationSelect = document.getElementById('destination-select');
+        let rating = 0;
+
+        // Star rating functionality
+        stars.forEach(star => {
+            star.addEventListener('mouseover', () => {
+                const hoverRating = star.getAttribute('data-rating');
+                highlightStars(hoverRating);
+            });
+
+            star.addEventListener('mouseout', () => {
+                highlightStars(rating);
+            });
+
+            star.addEventListener('click', () => {
+                rating = star.getAttribute('data-rating');
+                highlightStars(rating);
+            });
+        });
+
+        function highlightStars(count) {
+            stars.forEach((star, index) => {
+                star.classList.toggle('active', index < count);
+            });
+        }
+
+        // Submit review
+        submitButton.addEventListener('click', () => {
+            const selectedDestination = destinationSelect.value;
+            const review = reviewTextarea.value;
+
+            if (!selectedDestination) {
+                alert('Silakan pilih destinasi.');
+                return;
+            }
+            if (!rating) {
+                alert('Silakan berikan rating.');
+                return;
+            }
+            if (!review.trim()) {
+                alert('Silakan tulis ulasan Anda.');
+                return;
+            }
+
+            if (confirm('Apakah Anda yakin ingin mengirim ulasan ini?')) {
+                // Ambil data ulasan yang sudah ada dari localStorage
+                let existingReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+                
+                // Buat objek ulasan baru
+                const newReview = {
+                    id: Date.now(), // Menggunakan timestamp sebagai ID
+                    destination: selectedDestination,
+                    rating: parseInt(rating),
+                    review: review,
+                    author: "User", // Bisa diganti dengan nama user yang login
+                    date: new Date().toISOString()
+                };
+
+                // Tambahkan ulasan baru ke array
+                existingReviews.push(newReview);
+
+                // Simpan kembali ke localStorage
+                localStorage.setItem('reviews', JSON.stringify(existingReviews));
+
+                alert('Terima kasih atas ulasan Anda!');
+                
+                // Redirect ke halaman reviews
+                window.location.href = 'reviews.html';
+            }
+        });
+    </script>
+</body>
+</html>

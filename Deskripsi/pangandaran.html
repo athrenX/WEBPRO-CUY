@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pangandaran Indonesia | Pesona Indonesia</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="StyleeDes.css">
+    <link rel="stylesheet" href="/app/js/Home.js">
     
 
 </head>
@@ -24,12 +26,12 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/app/Home.html">Home</a>
+                    <a class="nav-link" href="/app/Home.html"><i class="fas fa-home me-1"></i>Home</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAllTrips" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">All Trips</a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdownAllTrips">
-                    <li><a class="dropdown-item active-page" href="#">Pantai Pangandaran</a></li>
+                    <li><a class="dropdown-item active-page" href="pangandaran.html">Pantai Pangandaran</a></li>
                     <li><a class="dropdown-item" href="anyer.html">Pantai Anyer</a></li>
                     <li><a class="dropdown-item" href="karimunjawa.html">Pantai Karimun Jawa</a></li>
                     <li><a class="dropdown-item" href="bromo.html">Gunung Bromo</a></li>
@@ -38,16 +40,16 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-bold" href="#" style="pointer-events: none;">Gallery</a>
+                    <a class="nav-link fw-bold" href="/app/gallery.html" style="pointer-events: none;"><i class="fas fa-images me-1"></i>Gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Review</a>
+                    <a class="nav-link" href="/app/reviews.html"><i class="fas fa-comments me-1"></i>Review</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about-us.html">About Us</a> <!-- Perubahan di sini -->
+                    <a class="nav-link" href="/app/aboutus.html"><i class="fas fa-info-circle me-1"></i>About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/app/login.html">Login</a>
+                  <a class="nav-link" href="/app/login.html"><i class="fas fa-user me-1"></i>Login</a>
                 </li>
             </ul>
         </div>
@@ -71,7 +73,7 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="#">Beranda</a></li>
+                <li class="breadcrumb-item"><a href="#">Gallery</a></li>
                 <li class="breadcrumb-item"><a href="#">Destinasi</a></li>
                 <li class="breadcrumb-item"><a href="#">Pangandaran | Destinasi Eksotis</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Pangandaran</li>
@@ -190,12 +192,7 @@
         </div>
     </div>
 </footer>
-
-
-<a href="/app/pemesananpangandaran.html" class="button btn-primary pesan-sekarang-btn" style="text-decoration: none;">Pesan Sekarang</a>
-<!-- <a href=""></a>
-<button class="pesan-sekarang-btn" onclick="window.location.href='/';">Pesan Sekarang</button> -->
-
+<a href="/app/pemesanan.html" class="btn pesan-sekarang-btn" style="text-decoration: none;">Pesan Sekarang</a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -203,26 +200,23 @@
     const navbar = document.querySelector('.navbar');
     const pesanButton = document.querySelector('.pesan-sekarang-btn');
   
-    // Fungsi untuk menyembunyikan navbar dan tombol pesan setelah beberapa detik tidak ada aktivitas
     function hideElements() {
-        navbar.classList.add('hidden');  // Menambahkan kelas untuk menyembunyikan navbar
-        pesanButton.classList.add('hidden');  // Menambahkan kelas untuk menyembunyikan tombol pesan
+        navbar.classList.add('hidden');  
+        pesanButton.classList.add('hidden');
     }
   
-    // Fungsi untuk menampilkan navbar dan tombol pesan ketika ada aktivitas
     function showElements() {
-        navbar.classList.remove('hidden');  // Menghapus kelas untuk menampilkan navbar
-        pesanButton.classList.remove('hidden');  // Menghapus kelas untuk menampilkan tombol pesan
-        clearTimeout(timeout);  // Menghentikan timer hideElements
-        timeout = setTimeout(hideElements, 3000);  // Mengatur untuk menyembunyikan navbar dan tombol pesan setelah 3 detik tidak ada aktivitas
+        navbar.classList.remove('hidden');  
+        pesanButton.classList.remove('hidden'); 
+        clearTimeout(timeout);
+        timeout = setTimeout(hideElements, 3000); 
     }
   
-    // Deteksi scroll atau pergerakan mouse untuk navbar dan tombol pesan
-    window.addEventListener('scroll', showElements);  // Menampilkan navbar dan tombol pesan saat scroll
-    window.addEventListener('mousemove', showElements);  // Menampilkan navbar dan tombol pesan saat ada pergerakan mouse
+    window.addEventListener('scroll', showElements);
+    window.addEventListener('mousemove', showElements);
   
-    // Menyembunyikan navbar dan tombol pesan saat halaman pertama kali dimuat
-    timeout = setTimeout(hideElements, 3000);  // Navbar dan tombol pesan akan tersembunyi setelah 3 detik pertama
+    
+    timeout = setTimeout(hideElements, 3000);
 
     window.addEventListener('scroll', () => {
         const elements = document.querySelectorAll('.scroll-animation');
@@ -233,8 +227,56 @@
             }
         });
     });
-  </script>
-  
+
+
+    $(document).ready(function() {
+    // Efek fade in
+    $('.content, .attractions, .activities').hide().fadeIn(1500);
+
+    // Animasi scroll agar smooth
+    $('.navbar-nav a').on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function(){
+                window.location.hash = hash;
+            });
+        }
+    });
+
+    // Efek hover
+    $('.activity-card').hover(
+        function() {
+            $(this).addClass('shadow-lg scale-up');
+        },
+        function() {
+            $(this).removeClass('shadow-lg scale-up');
+        }
+    );
+
+    // Animasi scroll reveal yang lebih halus
+    $(window).scroll(function() {
+        $('.scroll-animation').each(function() {
+            var elementTop = $(this).offset().top;
+            var windowTop = $(window).scrollTop();
+            var windowHeight = $(window).height();
+
+            if (windowTop > elementTop - windowHeight + 100) {
+                $(this).addClass('animate');
+            }
+        });
+    });
+
+    // Tooltip Bootstrap
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
+});
+</script>
+
 </body>
 </html>
 

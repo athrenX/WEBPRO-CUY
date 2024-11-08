@@ -1,160 +1,284 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gunung Bromo - Java Wonderland</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <style>
-      /* Sticky Navbar atas */
-      .navbar {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gunung Bromo Indonesia | Pesona Indonesia</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="StyleeDes.css">
+    <link rel="stylesheet" href="/app/js/Home.js">
+    
 
-      /* Sticky button di bawah */
-      .sticky-footer {
-        position: sticky;
-        bottom: 0;
-        z-index: 1000;
-        width: 100%;
-        background-color: #007bff;
-        text-align: center;
-        padding: 10px 0;
-      }
+</head>
+<body>
 
-      .sticky-footer a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      .content {
-        margin-bottom: 70px; /* Spacing for sticky footer */
-      }
-
-      /* Styling untuk gambar di halaman */
-      .image-banner {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-      }
-
-      /* Styling untuk paragraf konten */
-      .content p {
-        text-align: justify;
-      }
-
-      /* Styling button pesan sekarang */
-      .sticky-footer a:hover {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body class="d-flex flex-column min-vh-100">
-    <!-- Navbar Atas -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html">Java Wonderland</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="Gambar WhatsApp 2024-10-14 pukul 13.01.32_caf87105.jpg" alt="𝙹𝚊𝚟𝚊 𝚆𝚘𝚗𝚍𝚎𝚛𝚕𝚊𝚗𝚍" width="50"> 𝙹𝚊𝚟𝚊 𝚆𝚘𝚗𝚍𝚎𝚛𝚕𝚊𝚗𝚍
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="/app/Home.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">All Trips</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="/app/gallery.html">Gallery</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Review</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
-            </li>
-          </ul>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/app/Home.html"><i class="fas fa-home me-1"></i>Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAllTrips" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">All Trips</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownAllTrips">
+                    <li><a class="dropdown-item active-page" href="bromo.html">Gunung Bromo</a></li>
+                    <li><a class="dropdown-item" href="pangandaran.html">Pantai Pangandaran</a></li>
+                    <li><a class="dropdown-item" href="anyer.html">Pantai Anyer</a></li>
+                    <li><a class="dropdown-item" href="karimunjawa.html">Pantai Karimun Jawa</a></li>
+                    <li><a class="dropdown-item" href="sindoro.html">Gunung Sindoro</a></li>
+                    <li><a class="dropdown-item" href="ijen.html">Gunung Ijen</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="/app/gallery.html" style="pointer-events: none;"><i class="fas fa-images me-1"></i>Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/app/reviews.html"><i class="fas fa-comments me-1"></i>Review</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/app/aboutus.html"><i class="fas fa-info-circle me-1"></i>About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/app/login.html"><i class="fas fa-user me-1"></i>Login</a>
+                </li>
+            </ul>
         </div>
+    </div>
+  </nav>
+  
+
+
+<!-- Hero -->
+<section class="hero">
+    <video src="/Componen/Video bromo.mp4" autoplay muted loop playsinline></video>
+    <div class="container text-center">
+        <h1 class="hero-title">Gunung Bromo</h1>
+        <p class="hero-description lead">Nikmati keindahan Gunung Bromo dengan lanskap menakjubkan dan pengalaman tak terlupakan.</p>
+    </div>
+</section>
+
+
+<!-- Breadcrumbs -->
+<section class="breadcrumbs bg-light py-2">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#">Beranda</a></li>
+                <li class="breadcrumb-item"><a href="#">Destinasi</a></li>
+                <li class="breadcrumb-item"><a href="#">Gunung Bromo | Destinasi Eksotis</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Bromo</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Introduction Section -->
+<section class="content py-5">
+    <div class="container">
+        <h2 class="text-center">Gunung Bromo, Keajaiban Alam Indonesia</h2>
+        <p class="text-center">Gunung Bromo menawarkan keindahan alam dan budaya yang memikat bagi siapa saja yang berkunjung.</p>
+    </div>
+</section>
+
+<!-- Attractions Section -->
+<section class="attractions py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Daya Tarik Gunung Bromo</h2>
+        
+        <!-- First Attraction -->
+        <div class="row align-items-center mb-5 scroll-animation">
+            <div class="col-md-6">
+                <img src="/Componen/KawahBromo.jpg" class="img-fluid rounded" alt="Pantai Barat Pangandaran">
+            </div>
+            <div class="col-md-6">
+              <h4>Kawah Bromo</h4>
+              <p>Kawah aktif Gunung Bromo menawarkan pemandangan yang luar biasa, dengan asap belerang yang keluar dari kawahnya, menciptakan suasana mistis yang unik.</p>
+            </div>
+        </div>
+
+        <!-- Second Attraction -->
+        <div class="row align-items-center mb-5 scroll-animation">
+            <div class="col-md-6 order-md-2">
+                <video src="/Componen/Sunrise bromo.mp4" class="img-fluid rounded" autoplay muted loop></video>
+            </div>
+            <div class="col-md-6 order-md-1">
+              <h4>Sunrise di Bromo</h4>
+              <p>Menyaksikan matahari terbit di puncak Gunung Bromo adalah pengalaman yang sangat mempesona, di mana cahaya pagi menerangi lanskap vulkanik dengan keindahan yang tak tertandingi.</p>
+          </div>
+            </div>
+        </div>
+
+        <!-- Third Attraction -->
+        <div class="row align-items-center scroll-animation">
+            <div class="col-md-6 px-5">
+                <img src="/Componen/LautanPasir.jpg" class="img-fluid rounded" alt="Festival Budaya Pangandaran" style="height: 450px;">
+            </div>
+            <div class="col-md-6">
+              <h4>Lautan Pasir</h4>
+              <p>Lautan pasir yang luas di sekitar Gunung Bromo menambah pesona dan keunikan tempat ini, memberikan sensasi tersendiri bagi pengunjung yang menjelajahinya.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Bagian Kegiatan -->
+<section class="activities py-5 bg-light">
+  <div class="container">
+      <h2 class="text-center mb-4">Kegiatan Seru di Gunung Bromo</h2>
+      <div class="row g-4">
+          <!-- Kegiatan berjemur -->
+          <div class="col-md-4 scroll-animation">
+              <div class="activity-card">
+                  <img src="/Componen/MendakiBromo.jpg" class="img-fluid activity-img" alt="Mendaki">
+                  <h4 class="mt-3">Mendaki Gunung Bromo</h4>
+                  <p>Jelajahi Bromo dengan berjalan kaki menuju kawahnya untuk mendapatkan pengalaman tak terlupakan dan pemandangan spektakuler.</p>
+              </div>
+          </div>
+
+          <!-- Kegiatan Snorkeling -->
+          <div class="col-md-4 scroll-animation">
+              <div class="activity-card">
+                  <img src="/Componen/Berkuda.jpg" class="img-fluid activity-img" alt="Berkuda">
+                  <h4 class="mt-3">Berkuda di Laut Pasir</h4>
+                  <p>Pengunjung dapat menikmati sensasi berkuda di lautan pasir yang luas dan eksotis di kaki Gunung Bromo.</p>
+              </div>
+          </div>
+
+          <!-- Kegiatan Menikmati Sunset -->
+          <div class="col-md-4 scroll-animation">
+              <div class="activity-card">
+                  <img src="/Componen/Fotografi.jpg" class="img-fluid activity-img" alt="Fotografi">
+                  <h4 class="mt-3">Fotografi</h4>
+                  <p>Gunung Bromo adalah surganya fotografer, dengan pemandangan yang menakjubkan, terutama saat matahari terbit dan di sekitar kawah.</p>
+              </div>
+          </div>
       </div>
-    </nav>
+  </div>
+</section>
 
-    <!-- Banner Gambar -->
-    <div class="container mt-3">
-      <img src="/Componen/gambar bromo.jpeg" class="image-banner" alt="Gunung Bromo" />
+
+<!-- Footer Section -->
+<footer class="footer bg-dark text-light py-4">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h5>Contact Us</h5>
+                <p>Email: info@javawonderland.com</p>
+                <p>Phone: +62 123 456 789</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Follow Us</h5>
+                <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#" class="text-light"><i class="fab fa-twitter"></i> Twitter</a>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>About Us</h5>
+                <p>Discover the beauty of Indonesia through curated tours in breathtaking destinations.</p>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <p>&copy; 2024 Pangandaran | Java Wonderland. All Rights Reserved.</p>
+        </div>
     </div>
+</footer>
+<a href="/app/pemesanan.html" class="btn pesan-sekarang-btn" style="text-decoration: none;">Pesan Sekarang</a>
 
-    <!-- Isi Halaman -->
-    <div class="container content mt-4">
-      <h2 class="text-center mb-4">Wisata Gunung Bromo</h2>
-      <p>
-        Gunung Bromo merupakan salah satu destinasi wisata yang paling populer di
-        Pulau Jawa. Terletak di provinsi Jawa Timur, gunung ini terkenal dengan
-        pemandangan matahari terbit yang menakjubkan dan keindahan alamnya yang
-        memukau. Wisatawan dapat menyaksikan lautan pasir luas yang dikenal
-        dengan nama "Segara Wedi", kawah yang aktif, dan panorama pegunungan
-        yang indah di sekitarnya.
-      </p>
-      <p>
-        Gunung Bromo memiliki ketinggian sekitar 2.329 meter di atas permukaan
-        laut dan merupakan bagian dari Taman Nasional Bromo Tengger Semeru.
-        Aktivitas favorit di Bromo termasuk pendakian menuju puncak untuk
-        menyaksikan matahari terbit, berkuda di sekitar lautan pasir, dan
-        mengunjungi Pura Luhur Poten, sebuah pura yang berada di kaki gunung.
-      </p>
-      <p>
-        Selain keindahan alam, Gunung Bromo juga menawarkan pengalaman
-        budaya yang unik dengan upacara adat masyarakat Tengger. Salah satu
-        upacara yang terkenal adalah "Kasada", di mana penduduk lokal melempar
-        sesajen ke kawah Bromo untuk menghormati para dewa dan leluhur mereka.
-      </p>
-      <p>
-        Bagi para wisatawan yang ingin merasakan keindahan Bromo secara maksimal,
-        disarankan untuk datang pada dini hari, karena momen terbaik untuk
-        menyaksikan sunrise adalah sekitar pukul 05:30 pagi. Perjalanan ke
-        puncak Bromo dapat dilakukan dengan berjalan kaki atau menggunakan jeep
-        yang tersedia di sekitar area wisata.
-      </p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+    let timeout;
+    const navbar = document.querySelector('.navbar');
+    const pesanButton = document.querySelector('.pesan-sekarang-btn');
+  
+    // Fungsi untuk menyembunyikan navbar dan tombol pesan setelah beberapa detik tidak ada aktivitas
+    function hideElements() {
+        navbar.classList.add('hidden');  // Menambahkan kelas untuk menyembunyikan navbar
+        pesanButton.classList.add('hidden');  // Menambahkan kelas untuk menyembunyikan tombol pesan
+    }
+  
+    // Fungsi untuk menampilkan navbar dan tombol pesan ketika ada aktivitas
+    function showElements() {
+        navbar.classList.remove('hidden');  // Menghapus kelas untuk menampilkan navbar
+        pesanButton.classList.remove('hidden');  // Menghapus kelas untuk menampilkan tombol pesan
+        clearTimeout(timeout);  // Menghentikan timer hideElements
+        timeout = setTimeout(hideElements, 3000);  // Mengatur untuk menyembunyikan navbar dan tombol pesan setelah 3 detik tidak ada aktivitas
+    }
+  
+    // Deteksi scroll atau pergerakan mouse untuk navbar dan tombol pesan
+    window.addEventListener('scroll', showElements);  // Menampilkan navbar dan tombol pesan saat scroll
+    window.addEventListener('mousemove', showElements);  // Menampilkan navbar dan tombol pesan saat ada pergerakan mouse
+  
+    // Menyembunyikan navbar dan tombol pesan saat halaman pertama kali dimuat
+    timeout = setTimeout(hideElements, 3000);  // Navbar dan tombol pesan akan tersembunyi setelah 3 detik pertama
 
-      <h3 class="mt-5">Cara Menuju Gunung Bromo</h3>
-      <p>
-        Untuk mencapai Gunung Bromo, wisatawan dapat berangkat dari kota-kota
-        besar di Jawa Timur seperti Surabaya atau Malang. Terdapat banyak agen
-        perjalanan yang menawarkan paket wisata Bromo dengan transportasi jeep
-        dan pemandu wisata yang siap membantu Anda menjelajahi keindahan Bromo.
-      </p>
+    window.addEventListener('scroll', () => {
+        const elements = document.querySelectorAll('.scroll-animation');
+        elements.forEach((element) => {
+            const position = element.getBoundingClientRect();
+            if (position.top < window.innerHeight && position.bottom >= 0) {
+                element.classList.add('animate');
+            }
+        });
+    });
+    $(document).ready(function() {
+    // Efek fade in untuk konten saat halaman dimuat
+    $('.content, .attractions, .activities').hide().fadeIn(1500);
 
-      <h3 class="mt-5">Tips Berwisata di Gunung Bromo</h3>
-      <ul>
-        <li>Gunakan pakaian hangat karena suhu di Bromo bisa sangat dingin, terutama di pagi hari.</li>
-        <li>Bawa masker atau penutup wajah untuk melindungi dari debu saat berada di lautan pasir.</li>
-        <li>Jangan lupa untuk membawa kamera untuk mengabadikan momen sunrise yang menakjubkan.</li>
-        <li>Pesan perjalanan jeep dan pemandu wisata sebelumnya, terutama pada musim liburan.</li>
-      </ul>
-    </div>
+    // Animasi scroll smooth untuk navigasi
+    $('.navbar-nav a').on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function(){
+                window.location.hash = hash;
+            });
+        }
+    });
 
-    <!-- Sticky Footer (Pesan Sekarang) -->
-    <div class="sticky-footer">
-      <a href="/app/pemesanan.html" class="btn">Pesan Sekarang</a>
-    </div>
+    // Efek hover pada kartu aktivitas
+    $('.activity-card').hover(
+        function() {
+            $(this).addClass('shadow-lg scale-up');
+        },
+        function() {
+            $(this).removeClass('shadow-lg scale-up');
+        }
+    );
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+    // Animasi scroll reveal yang lebih halus
+    $(window).scroll(function() {
+        $('.scroll-animation').each(function() {
+            var elementTop = $(this).offset().top;
+            var windowTop = $(window).scrollTop();
+            var windowHeight = $(window).height();
+
+            if (windowTop > elementTop - windowHeight + 100) {
+                $(this).addClass('animate');
+            }
+        });
+    });
+
+    // Tooltip Bootstrap
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
+});
+  </script>
+  
+</body>
 </html>
+

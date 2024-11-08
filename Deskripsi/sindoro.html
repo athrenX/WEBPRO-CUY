@@ -1,137 +1,282 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gunung Sindoro - Java Wonderland</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <style>
-      .navbar {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gunung Sindoro Indonesia | Pesona Indonesia</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="StyleeDes.css">
+    <link rel="stylesheet" href="/app/js/Home.js">
+    
 
-      .sticky-footer {
-        position: sticky;
-        bottom: 0;
-        z-index: 1000;
-        width: 100%;
-        background-color: #007bff;
-        text-align: center;
-        padding: 10px 0;
-      }
+</head>
+<body>
 
-      .sticky-footer a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      .content {
-        margin-bottom: 70px;
-      }
-
-      .image-banner {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-      }
-
-      .content p {
-        text-align: justify;
-      }
-
-      .sticky-footer a:hover {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html">Java Wonderland</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="Gambar WhatsApp 2024-10-14 pukul 13.01.32_caf87105.jpg" alt="𝙹𝚊𝚟𝚊 𝚆𝚘𝚗𝚍𝚎𝚛𝚕𝚊𝚗𝚍" width="50"> 𝙹𝚊𝚟𝚊 𝚆𝚘𝚗𝚍𝚎𝚛𝚕𝚊𝚗𝚍
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="Home.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">All Trips</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="gallery.html">Gallery</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Review</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
-            </li>
-          </ul>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/app/Home.html"><i class="fas fa-home me-1"></i>Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAllTrips" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">All Trips</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownAllTrips">
+                    <li><a class="dropdown-item active-page" href="sindoro.html">Gunung Sindoro</a></li>
+                    <li><a class="dropdown-item" href="pangandaran.html">Pantai Pangandaran</a></li>
+                    <li><a class="dropdown-item" href="anyer.html">Pantai Anyer</a></li>
+                    <li><a class="dropdown-item" href="karimunjawa.html">Pantai Karimun Jawa</a></li>
+                    <li><a class="dropdown-item" href="bromo.html">Gunung Bromo</a></li>
+                    <li><a class="dropdown-item" href="ijen.html">Gunung Ijen</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="/app/gallery.html" style="pointer-events: none;"><i class="fas fa-images me-1"></i>Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/app/reviews.html"><i class="fas fa-comments me-1"></i>Review</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/app/aboutus.html"><i class="fas fa-info-circle me-1"></i>About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/app/login.html"><i class="fas fa-user me-1"></i>Login</a>
+                </li>
+            </ul>
         </div>
-      </div>
-    </nav>
-
-    <div class="container mt-3">
-      <img src="/Componen/gunung-sindoro.jpeg" class="image-banner" alt="Gunung Sindoro" />
     </div>
+  </nav>
+  
 
-    <div class="container content mt-4">
-      <h2 class="text-center mb-4">Wisata Gunung Sindoro</h2>
-      <p>
-        Gunung Sindoro terletak di Jawa Tengah dan sering disebut sebagai "kembar" dari Gunung Sumbing.
-        Gunung ini terkenal dengan keindahan alamnya dan menjadi tujuan favorit bagi para pendaki. Jalur pendakian
-        Gunung Sindoro menawarkan panorama alam yang luar biasa, terutama pada pagi hari ketika kabut masih menyelimuti
-        pegunungan di sekitarnya.
-      </p>
-      <p>
-        Sindoro adalah tempat yang sempurna bagi wisatawan yang mencari ketenangan dan keindahan alam. Pendakian Sindoro
-        menawarkan pemandangan perkebunan teh, hutan pegunungan, serta padang sabana yang menakjubkan di sepanjang
-        perjalanan.
-      </p>
-      <p>
-        Bagi yang gemar fotografi alam, sunrise dari puncak Gunung Sindoro memberikan kesempatan untuk menangkap
-        momen indah dengan latar pegunungan dan awan yang dramatis. Pendakian ke Gunung Sindoro dapat dilakukan dari
-        beberapa jalur, dan perjalanan biasanya membutuhkan waktu sekitar 6-8 jam.
-      </p>
 
-      <h3 class="mt-5">Cara Menuju Gunung Sindoro</h3>
-      <p>
-        Pendakian ke Gunung Sindoro bisa dimulai dari kota Wonosobo atau Temanggung. Dari sana, wisatawan dapat
-        melanjutkan perjalanan ke desa-desa yang menjadi titik awal pendakian, seperti Desa Kledung. Kendaraan umum
-        dan ojek tersedia untuk membawa pengunjung ke basecamp pendakian.
-      </p>
-
-      <h3 class="mt-5">Tips Berwisata di Gunung Sindoro</h3>
-      <ul>
-        <li>Pastikan untuk membawa persediaan air yang cukup karena ketersediaan air di jalur pendakian terbatas.</li>
-        <li>Gunakan perlengkapan pendakian yang sesuai dan sepatu hiking yang nyaman.</li>
-        <li>Bawa jaket hangat karena suhu di puncak bisa sangat dingin, terutama menjelang subuh.</li>
-      </ul>
+<!-- Hero -->
+<section class="hero">
+    <video src="/Componen/Video sindoro.mp4" autoplay muted loop playsinline></video>
+    <div class="container text-center">
+        <h1 class="hero-title">Gunung Sindoro</h1>
+        <p class="hero-description lead">Keindahan Gunung Sindoro dengan lanskap memukau dan pengalaman petualangan yang memikat.</p>
     </div>
+</section>
 
-    <div class="sticky-footer">
-      <a href="/app/pemesanan.html" class="btn">Pesan Sekarang</a>
+
+<!-- Breadcrumbs -->
+<section class="breadcrumbs bg-light py-2">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#">Beranda</a></li>
+                <li class="breadcrumb-item"><a href="#">Destinasi</a></li>
+                <li class="breadcrumb-item"><a href="#">Gunung Sindoro | Pesona Alam</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Gunung Sindoro</li>
+            </ol>
+        </nav>
     </div>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+<!-- Introduction Section -->
+<section class="content py-5">
+    <div class="container">
+        <h2 class="text-center">Gunung Sindoro, Puncak Keindahan Jawa Tengah</h2>
+        <p class="text-center">Gunung Sindoro menyajikan keindahan alam dan pemandangan pegunungan yang memukau bagi siapa saja yang mendakinya.</p>
+    </div>
+</section>
+
+<!-- Attractions Section -->
+<section class="attractions py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Daya Tarik Gunung Sindoro</h2>
+        
+        <!-- First Attraction -->
+        <div class="row align-items-center mb-5 scroll-animation">
+            <div class="col-md-6">
+                <img src="/Componen/sunrisesindoro.jpg" class="img-fluid rounded" alt="Sunrise" style="height: 370px;">
+            </div>
+            <div class="col-md-6">
+                <h4>Sunrise di Sindoro</h4>
+                <p>Pantai Barat Pangandaran terkenal dengan keindahan matahari terbenamnya, sementara Pantai Timur cocok untuk kegiatan air seperti snorkeling dan jet ski. Pantai ini memiliki pasir putih yang indah dan ombak yang tenang, menjadikannya tempat sempurna untuk menikmati keindahan alam.</p>
+            </div>
+        </div>
+
+        <!-- Second Attraction -->
+        <div class="row align-items-center mb-5 scroll-animation">
+            <div class="col-md-6 order-md-2">
+                <video src="/Componen/kawahsindoro.mp4" class="img-fluid rounded" autoplay muted loop></video>
+            </div>
+            <div class="col-md-6 order-md-1">
+                <h4>Kawah Sindoro</h4>
+                <p>Kawah di Gunung Sindoro menampilkan lanskap menakjubkan yang memukau, dengan suasana alami yang khas dan udara pegunungan yang sejuk.</p>
+            </div>
+        </div>
+
+        <!-- Third Attraction -->
+        <div class="row align-items-center scroll-animation">
+            <div class="col-md-6">
+                <img src="/Componen/endelwishsindoro.png" class="img-fluid rounded" alt="Ladang Bunga Edelweis">
+            </div>
+            <div class="col-md-6">
+                <h4>Ladang Bunga Edelweiss</h4>
+                <p>Ladang bunga Edelweiss di sekitar Gunung Sindoro menambah pesona dan daya tarik bagi pendaki yang ingin menikmati keindahan flora pegunungan.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Bagian Kegiatan -->
+<section class="activities py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Kegiatan Seru di Gunung Sindoro</h2>
+        <div class="row g-4">
+            <!-- Kegiatan Berselancar -->
+            <div class="col-md-4 scroll-animation">
+                <div class="activity-card">
+                    <img src="/Componen/Fotografi.jpg" class="img-fluid activity-img" alt="Fotografi">
+                    <h4 class="mt-3">Fotografi</h4>
+                    <p>Gunung Sindoro menawarkan banyak pemandangan indah yang sangat cocok untuk fotografi, terutama saat matahari terbit dan di sekitar kawah.</p>
+                </div>
+            </div>
+
+            <!-- Kegiatan Snorkeling -->
+            <div class="col-md-4 scroll-animation">
+                <div class="activity-card">
+                    <img src="/Componen/dakiSindoro.jpg" class= "img-fluid activity-img" alt="Mendaki Gunung Sindoro">
+                    <h4 class="mt-3">Mendaki Gunung Sindoro</h4>
+                    <p>Jelajahi keindahan Sindoro dengan mendaki ke puncaknya, menikmati suasana tenang dan pemandangan yang luar biasa.</p>
+                </div>
+            </div>
+            <!-- Kegiatan Menikmati Sunset -->
+            <div class="col-md-4 scroll-animation">
+                <div class="activity-card">
+                    <img src="/Componen/berkemahsindoro.jpg" class="img-fluid activity-img" alt="Berkemah">
+                    <h4 class="mt-3">Berkemah</h4>
+                    <p>Pendaki dapat berkemah di lereng Sindoro untuk merasakan malam di pegunungan yang damai dan melihat bintang di malam hari.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer class="footer bg-dark text-light py-4">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h5>Contact Us</h5>
+                <p>Email: info@javawonderland.com</p>
+                <p>Phone: +62 123 456 789</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Follow Us</h5>
+                <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#" class="text-light"><i class="fab fa-twitter"></i> Twitter</a>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>About Us</h5>
+                <p>Discover the beauty of Indonesia through curated tours in breathtaking destinations.</p>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <p>&copy; 2024 Pangandaran | Java Wonderland. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+<a href="/app/pemesanan.html" class="btn pesan-sekarang-btn" style="text-decoration: none;">Pesan Sekarang</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+    let timeout;
+    const navbar = document.querySelector('.navbar');
+    const pesanButton = document.querySelector('.pesan-sekarang-btn');
+  
+    // Fungsi untuk menyembunyikan navbar dan tombol pesan setelah beberapa detik tidak ada aktivitas
+    function hideElements() {
+        navbar.classList.add('hidden');  // Menambahkan kelas untuk menyembunyikan navbar
+        pesanButton.classList.add('hidden');  // Menambahkan kelas untuk menyembunyikan tombol pesan
+    }
+  
+    // Fungsi untuk menampilkan navbar dan tombol pesan ketika ada aktivitas
+    function showElements() {
+        navbar.classList.remove('hidden');  // Menghapus kelas untuk menampilkan navbar
+        pesanButton.classList.remove('hidden');  // Menghapus kelas untuk menampilkan tombol pesan
+        clearTimeout(timeout);  // Menghentikan timer hideElements
+        timeout = setTimeout(hideElements, 3000);  // Mengatur untuk menyembunyikan navbar dan tombol pesan setelah 3 detik tidak ada aktivitas
+    }
+  
+    // Deteksi scroll atau pergerakan mouse untuk navbar dan tombol pesan
+    window.addEventListener('scroll', showElements);  // Menampilkan navbar dan tombol pesan saat scroll
+    window.addEventListener('mousemove', showElements);  // Menampilkan navbar dan tombol pesan saat ada pergerakan mouse
+  
+    // Menyembunyikan navbar dan tombol pesan saat halaman pertama kali dimuat
+    timeout = setTimeout(hideElements, 3000);  // Navbar dan tombol pesan akan tersembunyi setelah 3 detik pertama
+
+    window.addEventListener('scroll', () => {
+        const elements = document.querySelectorAll('.scroll-animation');
+        elements.forEach((element) => {
+            const position = element.getBoundingClientRect();
+            if (position.top < window.innerHeight && position.bottom >= 0) {
+                element.classList.add('animate');
+            }
+        });
+    });
+    $(document).ready(function() {
+    // Efek fade in untuk konten saat halaman dimuat
+    $('.content, .attractions, .activities').hide().fadeIn(1500);
+
+    // Animasi scroll smooth untuk navigasi
+    $('.navbar-nav a').on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function(){
+                window.location.hash = hash;
+            });
+        }
+    });
+
+    // Efek hover pada kartu aktivitas
+    $('.activity-card').hover(
+        function() {
+            $(this).addClass('shadow-lg scale-up');
+        },
+        function() {
+            $(this).removeClass('shadow-lg scale-up');
+        }
+    );
+
+    // Animasi scroll reveal yang lebih halus
+    $(window).scroll(function() {
+        $('.scroll-animation').each(function() {
+            var elementTop = $(this).offset().top;
+            var windowTop = $(window).scrollTop();
+            var windowHeight = $(window).height();
+
+            if (windowTop > elementTop - windowHeight + 100) {
+                $(this).addClass('animate');
+            }
+        });
+    });
+
+    // Tooltip Bootstrap
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
+});
+  </script>
+  
+</body>
 </html>
+

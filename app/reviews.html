@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulasan Destinasi | Java Wonderland</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="StyleeDes.css">
+    <link rel="stylesheet" href="/app/css/reviews.css">
+    <link rel="stylesheet" href="/app/css/home.css">
+</head>
+<body>
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary-gradient shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-uppercase" href="#">Java Wonderland</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link" href="Home.html"><i class="fas fa-home me-1"></i>Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAllTrips" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">All Trips</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAllTrips">
+              <li><a class="dropdown-item active-page" href="#">Pantai Pangandaran</a></li>
+              <li><a class="dropdown-item" href="/Deskripsi/anyer.html">Pantai Anyer</a></li>
+              <li><a class="dropdown-item" href="/Deskripsi/karimunjawa.html">Pantai Karimun Jawa</a></li>
+              <li><a class="dropdown-item" href="/Deskripsi/bromo.html">Gunung Bromo</a></li>
+              <li><a class="dropdown-item" href="/Deskripsi/sindoro.html">Gunung Sindoro</a></li>
+              <li><a class="dropdown-item" href="/Deskripsi/ijen.html">Gunung Ijen</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="fas fa-images me-1"></i>Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="aboutus.html"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="reviews.html"><i class="fas fa-comments me-1"></i>Review</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html" id="loginButton"><i class="fas fa-user me-1"></i>Login</a></li>
+
+          <!-- Profile Button (Hanya akan muncul saat login) -->
+         <l i class="nav-item" id="profileNavItem" style="display: none;">
+            <a class="nav-link" href="#" id="profileButton"><i class="fas fa-user me-1"></i>Profile</a>
+          </li>
+          <!-- Notifikasi -->
+          <li class="nav-item position-relative">
+            <a class="nav-link" href="#" id="notification-icon">
+              <i class="fas fa-bell fa-lg"></i>
+              <span class="badge bg-danger position-absolute top-0 start-100 translate-middle" id="notification-badge" style="display: none;">1</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container my-5 pt-5">
+        <h1 class="text-center mb-4">Ulasan Destinasi</h1>
+
+        <!-- Tombol Tambah Ulasan -->
+        <div class="text-center mb-4">
+            <a href="rating.html" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Tambah Ulasan Baru
+            </a>
+        </div>
+
+        <!-- Statistik Ulasan -->
+        <div class="review-stats mb-4">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <h4>Rating Rata-rata</h4>
+                    <div class="display-4 average-rating">0.0</div>
+                    <div class="star-rating">
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h4>Distribusi Rating</h4>
+                    <div class="rating-bars">
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="me-2">5 ★</span>
+                            <div class="progress flex-grow-1">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="5"></div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="me-2">4 ★</span>
+                            <div class="progress flex-grow-1">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="4"></div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="me-2">3 ★</span>
+                            <div class="progress flex-grow-1">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 0%" aria-valuenow="3"></div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="me-2">2 ★</span>
+                            <div class="progress flex-grow-1">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="2"></div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <span class="me-2">1 ★</span>
+                            <div class="progress flex-grow-1">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter dan Pengurutan -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <select class="form-select" id="destination-filter">
+                    <option value="all">Semua Destinasi</option>
+                    <option value="pangandaran">Pangandaran</option>
+                    <option value="anyer">Pantai Anyer</option>
+                    <option value="karimunjawa">Pantai Karimun Jawa</option>
+                    <option value="bromo">Gunung Bromo</option>
+                    <option value="sindoro">Gunung Sindoro</option>
+                    <option value="ijen">Gunung Ijen</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <select class="form-select" id="rating-filter">
+                    <option value="all">Semua Rating</option>
+                    <option value="5">5 Bintang</option>
+                    <option value="4">4 Bintang</option>
+                    <option value="3">3 Bintang</option>
+                    <option value="2">2 Bintang</option>
+                    <option value="1">1 Bintang</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <select class="form-select" id="sort-filter">
+                    <option value="newest">Terbaru</option>
+                    <option value="oldest">Terlama</option>
+                    <option value="highest">Rating Tertinggi</option>
+                    <option value="lowest">Rating Terendah</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Container untuk Ulasan -->
+        <div id="reviews-container">
+            <!-- Ulasan akan ditampilkan di sini -->
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation" class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Fungsi untuk mengambil data dari localStorage
+        function getReviews() {
+            return JSON.parse(localStorage.getItem('reviews')) || [];
+        }
+
+        // Fungsi untuk mengkapitalisasi huruf pertama
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        // Fungsi untuk mendapatkan nama destinasi yang lebih readable
+               // Fungsi untuk mendapatkan nama destinasi yang lebih readable
+               function getDestinationName(value) {
+            const destinations = {
+                'pangandaran': 'Pantai Pangandaran',
+                'anyer': 'Pantai Anyer',
+                'karimunjawa': 'Pantai Karimun Jawa',
+                'bromo': 'Gunung Bromo',
+                'sindoro': 'Gunung Sindoro',
+                'ijen': 'Gunung Ijen'
+            };
+            return destinations[value] || value;
+        }
+
+        // Fungsi untuk memformat tanggal
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString('id-ID', options);
+        }
+
+        // Fungsi untuk membuat tampilan bintang
+        function getStarRating(rating) {
+            let stars = '';
+            for (let i = 0; i < 5; i++) {
+                if (i < rating) {
+                    stars += '<i class="fas fa-star"></i>';
+                } else {
+                    stars += '<i class="far fa-star"></i>';
+                }
+            }
+            return stars;
+        }
+
+        // Fungsi untuk menampilkan ulasan
+        function displayReviews(reviewsToShow) {
+            const container = document.getElementById('reviews-container');
+            container.innerHTML = '';
+
+            if (reviewsToShow.length === 0) {
+                container.innerHTML = '<div class="alert alert-info">Belum ada ulasan.</div>';
+                return;
+            }
+
+            reviewsToShow.forEach(review => {
+                const card = document.createElement('div');
+                card.className = 'card review-card';
+                card.innerHTML = `
+                    <div class="card-body">
+                        <h5 class="card-title">${getDestinationName(review.destination)}</h5>
+                        <div class="star-rating mb-2">
+                            ${getStarRating(review.rating)}
+                        </div>
+                        <p class="card-text">${review.review}</p>
+                        <div class="d-flex justify-content-between">
+                            <span class="review-author">Oleh: ${review.author}</span>
+                            <span class="review-date">${formatDate(review.date)}</span>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Fungsi untuk update statistik ulasan
+        function updateReviewStats() {
+            const reviews = getReviews();
+            const totalReviews = reviews.length;
+            
+            if (totalReviews === 0) {
+                document.querySelector('.average-rating').textContent = '0.0';
+                return;
+            }
+
+            // Hitung rating rata-rata
+            const averageRating = reviews.reduce((acc, curr) => acc + curr.rating, 0) / totalReviews;
+            document.querySelector('.average-rating').textContent = averageRating.toFixed(1);
+
+            // Hitung persentase untuk setiap rating
+            const ratingCounts = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0};
+            reviews.forEach(review => {
+                ratingCounts[review.rating]++;
+            });
+
+            // Update progress bars
+            Object.keys(ratingCounts).forEach(rating => {
+                const percentage = (ratingCounts[rating] / totalReviews) * 100;
+                const progressBar = document.querySelector(`.progress-bar[aria-valuenow="${rating}"]`);
+                if (progressBar) {
+                    progressBar.style.width = `${percentage}%`;
+                    progressBar.textContent = `${percentage.toFixed(0)}%`;
+                }
+            });
+        }
+
+        // Event listeners untuk filter dan pengurutan
+        document.getElementById('destination-filter').addEventListener('change', filterReviews);
+        document.getElementById('rating-filter').addEventListener('change', filterReviews);
+        document.getElementById('sort-filter').addEventListener('change', filterReviews);
+
+        function filterReviews() {
+            let reviews = getReviews();
+            const destinationFilter = document.getElementById('destination-filter').value;
+            const ratingFilter = document.getElementById('rating-filter').value;
+            const sortFilter = document.getElementById('sort-filter').value;
+
+            // Filter berdasarkan destinasi
+            if (destinationFilter !== 'all') {
+                reviews = reviews.filter(review => review.destination === destinationFilter);
+            }
+
+            // Filter berdasarkan rating
+            if (ratingFilter !== 'all') {
+                reviews = reviews.filter(review => review.rating === parseInt(ratingFilter));
+            }
+
+            // Pengurutan
+            switch (sortFilter) {
+                case 'newest':
+                    reviews.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    break;
+                case 'oldest':
+                    reviews.sort((a, b) => new Date(a.date) - new Date(b.date));
+                    break;
+                case 'highest':
+                    reviews.sort((a, b) => b.rating - a.rating);
+                    break;
+                case 'lowest':
+                    reviews.sort((a, b) => a.rating - b.rating);
+                    break;
+            }
+
+            displayReviews(reviews);
+        }
+
+        // Inisialisasi tampilan
+        displayReviews(getReviews());
+        updateReviewStats();
+    </script>
+</body>
+</html>

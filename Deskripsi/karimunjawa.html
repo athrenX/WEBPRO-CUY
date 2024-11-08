@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karimunjawa Indonesia | Pesona Indonesia</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="StyleeDes.css">
@@ -24,30 +25,30 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/app/Home.html">Home</a>
+                    <a class="nav-link" href="/app/Home.html"><i class="fas fa-home me-1"></i>Home</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAllTrips" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">All Trips</a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdownAllTrips">
-                    <li><a class="dropdown-item active-page" href="karimunjawa.html">Pantai Karimunjawa</a></li>
-                    <li><a class="dropdown-item" href="pangandaran.html">Pantai Pangandaran</a></li>
+                    <li><a class="dropdown-item active-page" href="karimunjawa.html">Pantai Karimun Jawa</a></li>
                     <li><a class="dropdown-item" href="anyer.html">Pantai Anyer</a></li>
+                    <li><a class="dropdown-item" href="pangandaran.html">Pantai Pangandaran</a></li>
                     <li><a class="dropdown-item" href="bromo.html">Gunung Bromo</a></li>
                     <li><a class="dropdown-item" href="sindoro.html">Gunung Sindoro</a></li>
                     <li><a class="dropdown-item" href="ijen.html">Gunung Ijen</a></li>
                   </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-bold" href="#" style="pointer-events: none;">Gallery</a>
+                    <a class="nav-link fw-bold" href="#" style="pointer-events: none;"><i class="fas fa-images me-1"></i>Gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Review</a>
+                    <a class="nav-link" href="#"><i class="fas fa-comments me-1"></i>Review</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about-us.html">About Us</a>
+                    <a class="nav-link" href="about-us.html"><i class="fas fa-info-circle me-1"></i>About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/app/login.html">Login</a>
+                  <a class="nav-link" href="/app/login.html"><i class="fas fa-user me-1"></i>Login</a>
                 </li>
             </ul>
         </div>
@@ -195,7 +196,7 @@
 
 
 
-<button class="pesan-sekarang-btn" onclick="window.location.href='/app/pemesanan.html';">Pesan Sekarang</button>
+<a href="/app/pemesanan.html" class="btn btn-primary pesan-sekarang-btn" style="text-decoration: none;">Pesan Sekarang</a>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
@@ -234,6 +235,52 @@
             }
         });
     });
+    $(document).ready(function() {
+    // Efek fade in untuk konten saat halaman dimuat
+    $('.content, .attractions, .activities').hide().fadeIn(1500);
+
+    // Animasi scroll smooth untuk navigasi
+    $('.navbar-nav a').on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function(){
+                window.location.hash = hash;
+            });
+        }
+    });
+
+    // Efek hover pada kartu aktivitas
+    $('.activity-card').hover(
+        function() {
+            $(this).addClass('shadow-lg scale-up');
+        },
+        function() {
+            $(this).removeClass('shadow-lg scale-up');
+        }
+    );
+
+    // Animasi scroll reveal yang lebih halus
+    $(window).scroll(function() {
+        $('.scroll-animation').each(function() {
+            var elementTop = $(this).offset().top;
+            var windowTop = $(window).scrollTop();
+            var windowHeight = $(window).height();
+
+            if (windowTop > elementTop - windowHeight + 100) {
+                $(this).addClass('animate');
+            }
+        });
+    });
+
+    // Tooltip Bootstrap
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
+});
   </script>
   
 </body>

@@ -22,7 +22,7 @@
                             <p class="text-muted mb-4">Terima kasih telah melakukan pemesanan di Java Wonderland</p>
                         </div>
                         
-                        <div class="bg-light p-4 rounded-3 mb-4">
+                        <!-- <div class="bg-light p-4 rounded-3 mb-4">
                             <h5 class="text-primary mb-3">Detail Pemesanan</h5>
                             <div class="row">
                                 <div class="col-md-6 text-start">
@@ -34,6 +34,22 @@
                                     <p><strong>Tanggal:</strong><br>20 Oktober 2024</p>
                                     <p><strong>Jam:</strong><br>08:00 WIB</p>
                                     <p><strong>Bus:</strong><br>SISIL</p>
+                                </div>
+                            </div>
+                        </div> -->
+                        
+                        <div class="bg-light p-4 rounded-3 mb-4">
+                            <h5 class="text-primary mb-3">Detail Pemesanan</h5>
+                            <div class="row">
+                                <div class="col-md-6 text-start">
+                                    <p><strong>Nomor Pesanan:</strong><br><span id="orderNumber">-</span></p>
+                                    <p><strong>Keberangkatan:</strong><br><span id="departureCity">-</span></p>
+                                    <p><strong>Tujuan:</strong><br><span id="destination">-</span></p>
+                                </div>
+                                <div class="col-md-6 text-start">
+                                    <p><strong>Tanggal:</strong><br><span id="departureDate">-</span></p>
+                                    <p><strong>Jam:</strong><br><span id="departureTime">-</span></p>
+                                    <p><strong>Bus:</strong><br><span id="vehicleType">-</span></p>
                                 </div>
                             </div>
                         </div>
@@ -73,6 +89,32 @@
             // Add fade-in effect to details
             $('.bg-light').addClass('animate__animated animate__fadeIn');
         });
+    $(document).ready(function() {
+        // Ambil detail pemesanan dari Local Storage
+        const bookingDetails = JSON.parse(localStorage.getItem('bookingDetails'));
+
+        if (bookingDetails) {
+            // Update detail pemesanan di halaman
+            $('#orderNumber').text(bookingDetails.orderNumber);
+            $('#departureCity').text(bookingDetails.departureCity);
+            $('#destination').text(bookingDetails.destination);
+            $('#departureDate').text(bookingDetails.departureDate);
+            $('#departureTime').text(bookingDetails.departureTime);
+            $('#vehicleType').text(bookingDetails.vehicleType);
+
+            // Optional: Tambahkan detail lainnya sesuai kebutuhan
+
+            // Hapus data dari Local Storage setelah dibaca
+            localStorage.removeItem('bookingDetails');
+        }
+
+        // Tambahkan event listener untuk cetak tiket
+        $('#btnCetakTiket').click(function() {
+            // Cetak tiket dengan detail pemesanan
+            window.print();
+        });
+    });
+
     </script>
 </body>
 </html>
