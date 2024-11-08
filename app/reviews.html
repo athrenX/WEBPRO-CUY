@@ -11,34 +11,47 @@
     <link rel="stylesheet" href="/app/css/home.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-gradient shadow-sm">
-        <div class="container">
-          <a class="navbar-brand fw-bold text-uppercase" href="#">Java Wonderland</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav align-items-center">
-              <li class="nav-item"><a class="nav-link active" href="#"><i class="fas fa-home me-1"></i>Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-map-signs me-1"></i>All Trips</a></li>
-              <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="fas fa-images me-1"></i>Gallery</a></li>
-              <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
-              <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-comments me-1"></i>Review</a></li>
-              <!-- Login/Logout Button -->
-              <li class="nav-item"><a id="authButton" class="nav-link" href="#"><i class="fas fa-user me-1"></i><span id="authText">Login</span></a></li>
-              <!-- Notifikasi -->
-              <li class="nav-item position-relative">
-                <a class="nav-link" href="#" id="notification-icon">
-                  <i class="fas fa-bell fa-lg"></i>
-                  <span class="badge bg-danger position-absolute top-0 start-100 translate-middle" id="notification-badge" style="display: none;">1</span>
-                </a>
-              </li>
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary-gradient shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-uppercase" href="#">Java Wonderland</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link" href="Home.html"><i class="fas fa-home me-1"></i>Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAllTrips" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">All Trips</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownAllTrips">
+              <li><a class="dropdown-item active-page" href="#">Pantai Pangandaran</a></li>
+              <li><a class="dropdown-item" href="/Deskripsi/anyer.html">Pantai Anyer</a></li>
+              <li><a class="dropdown-item" href="/Deskripsi/karimunjawa.html">Pantai Karimun Jawa</a></li>
+              <li><a class="dropdown-item" href="/Deskripsi/bromo.html">Gunung Bromo</a></li>
+              <li><a class="dropdown-item" href="/Deskripsi/sindoro.html">Gunung Sindoro</a></li>
+              <li><a class="dropdown-item" href="/Deskripsi/ijen.html">Gunung Ijen</a></li>
             </ul>
-          </div>
-        </div>
-      </nav>
-    </nav>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html"><i class="fas fa-images me-1"></i>Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="aboutus.html"><i class="fas fa-info-circle me-1"></i>About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="reviews.html"><i class="fas fa-comments me-1"></i>Review</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html" id="loginButton"><i class="fas fa-user me-1"></i>Login</a></li>
+
+          <!-- Profile Button (Hanya akan muncul saat login) -->
+         <l i class="nav-item" id="profileNavItem" style="display: none;">
+            <a class="nav-link" href="#" id="profileButton"><i class="fas fa-user me-1"></i>Profile</a>
+          </li>
+          <!-- Notifikasi -->
+          <li class="nav-item position-relative">
+            <a class="nav-link" href="#" id="notification-icon">
+              <i class="fas fa-bell fa-lg"></i>
+              <span class="badge bg-danger position-absolute top-0 start-100 translate-middle" id="notification-badge" style="display: none;">1</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
     <div class="container my-5 pt-5">
         <h1 class="text-center mb-4">Ulasan Destinasi</h1>
@@ -151,11 +164,6 @@
             </ul>
         </nav>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer bg-dark text-light py-4">
-        <!-- Kode footer di sini -->
-    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>

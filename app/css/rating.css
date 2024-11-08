@@ -5,3 +5,24 @@
 .rating i.active {
     color: #ffc107;
 }
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ff5722;
+}
+
+.footer .bi {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.footer i {
+    font-size: 1.5rem;  
+    margin-right: 10px;  
+}
