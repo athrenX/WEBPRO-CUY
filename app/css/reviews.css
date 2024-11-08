@@ -1,0 +1,15 @@
+.review-card {
+    margin-bottom: 1rem;
+}
+.star-rating i {
+    color: #ffc107;
+}
+.progress {
+    height: 20px;
+}
+.review-stats {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
