@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cetak Tiket Digital - Java Wonderland</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            .ticket {
+                border: 1px solid #ddd !important;
+                break-inside: avoid;
+            }
+        }
+        
+        .ticket {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .ticket-header {
+            background: linear-gradient(135deg, #007bff, #4a90e2);
+            color: white;
+            padding: 20px;
+        }
+        
+        .ticket-body {
+            padding: 20px;
+        }
+        
+        .qr-code {
+            width: 150px;
+            height: 150px;
+            background-color: #f8f9fa;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        
+        .validation-text {
+            font-size: 12px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="ticket shadow">
+                    <div class="ticket-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h2 class="mb-0">Java Wonderland</h2>
+                            <span class="badge bg-warning text-dark">E-Ticket</span>
+                        </div>
+                    </div>
+                    <div class="ticket-body">
+                        <div class="row mb-4">
+                            <div class="col-md-8">
+                                <h5 class="text-primary mb-4">Detail Tiket</h5>
+                                <div class="row">
+                                    <div class="col-6 mb-3">
+                                        <small class="text-muted d-block">Nomor Pesanan</small>
+                                        <strong id="orderNumber">-</strong>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <small class="text-muted d-block">Tanggal</small>
+                                        <strong id="departureDate">-</strong>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <small class="text-muted d-block">Keberangkatan</small>
+                                        <strong id="departureCity">-</strong>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <small class="text-muted d-block">Jam</small>
+                                        <strong id="departureTime">-</strong>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <small class="text-muted d-block">Tujuan</small>
+                                        <strong id="destination">-</strong>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <small class="text-muted d-block">Bus</small>
+                                        <strong id="vehicleType">-</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="qr-code mb-2" id="qrCodeContainer">
+                                    QR Code will be generated here
+                                </div>
+                                <small class="validation-text">Scan untuk validasi</small>
+                            </div>
+                        </div>
+                        <div class="border-top pt-3">
+                            <small class="text-muted">
+                                * Tiket ini adalah bukti yang sah dan dapat ditukarkan
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4 no-print">
+                    <button class="btn btn-primary me-2" onclick="window.print()">
+                        <i class="fas fa-print me-2"></i>Cetak Tiket
+                    </button>
+                    <a href="/app/Home.html" class="btn btn-outline-primary">
+                        <i class="fas fa-home me-2"></i>Kembali ke Beranda
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Ambil data tiket dari localStorage
+            const bookingDetails = JSON.parse(localStorage.getItem('bookingDetails'));
+            
+            if (bookingDetails) {
+                // Update informasi tiket
+                $('#orderNumber').text(bookingDetails.orderNumber);
+                $('#departureCity').text(bookingDetails.departureCity);
+                $('#destination').text(bookingDetails.destination);
+                $('#departureDate').text(bookingDetails.departureDate);
+                $('#departureTime').text(bookingDetails.departureTime);
+                $('#vehicleType').text(bookingDetails.vehicleType);
+                
+                // Generate QR Code
+                $('#qrCodeContainer').empty(); // Clear previous QR code
+                $('#qrCodeContainer').qrcode({
+                    text: bookingDetails.orderNumber, // Ganti dengan informasi yang ingin di-encode
+                    width: 150,
+                    height: 150
+                });
+
+                // Tandai tiket sudah dicetak
+                localStorage.setItem('ticketPrinted', 'true');
+                // Update notification badge di home page
+                localStorage.setItem('hasNotification', 'false');
+            }
+        });
+    </script>
+</body>
+</html>

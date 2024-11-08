@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body class="bg-light">
-    <!-- Success Payment Section -->
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -22,48 +21,31 @@
                             <p class="text-muted mb-4">Terima kasih telah melakukan pemesanan di Java Wonderland</p>
                         </div>
                         
-                        <!-- <div class="bg-light p-4 rounded-3 mb-4">
-                            <h5 class="text-primary mb-3">Detail Pemesanan</h5>
-                            <div class="row">
-                                <div class="col-md-6 text-start">
-                                    <p><strong>Nomor Pesanan:</strong><br>JW-2024102001</p>
-                                    <p><strong>Keberangkatan:</strong><br>Bandung</p>
-                                    <p><strong>Tujuan:</strong><br>Bromo</p>
-                                </div>
-                                <div class="col-md-6 text-start">
-                                    <p><strong>Tanggal:</strong><br>20 Oktober 2024</p>
-                                    <p><strong>Jam:</strong><br>08:00 WIB</p>
-                                    <p><strong>Bus:</strong><br>SISIL</p>
-                                </div>
-                            </div>
-                        </div> -->
-                        
                         <div class="bg-light p-4 rounded-3 mb-4">
                             <h5 class="text-primary mb-3">Detail Pemesanan</h5>
                             <div class="row">
                                 <div class="col-md-6 text-start">
-                                    <p><strong>Nomor Pesanan:</strong><br><span id="orderNumber">-</span></p>
-                                    <p><strong>Keberangkatan:</strong><br><span id="departureCity">-</span></p>
-                                    <p><strong>Tujuan:</strong><br><span id="destination">-</span></p>
+                                    <p><strong>Nomor Pesanan:</strong><br><span id="orderNumber">JW-2024102001</span></p>
+                                    <p><strong>Keberangkatan:</strong><br><span id="departureCity">Bandung</span></p>
+                                    <p><strong>Tujuan:</strong><br><span id="destination">Bromo</span></p>
                                 </div>
                                 <div class="col-md-6 text-start">
-                                    <p><strong>Tanggal:</strong><br><span id="departureDate">-</span></p>
-                                    <p><strong>Jam:</strong><br><span id="departureTime">-</span></p>
-                                    <p><strong>Bus:</strong><br><span id="vehicleType">-</span></p>
+                                    <p><strong>Tanggal:</strong><br><span id="departureDate">20 Oktober 2024</span></p>
+                                    <p><strong>Jam:</strong><br><span id="departureTime">08:00 WIB</span></p>
+                                    <p><strong>Bus:</strong><br><span id="vehicleType">SISIL</span></p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="d-grid gap-2 d-md-flex justify-content-center">
-                            <a href="/app/Home.html" class="btn btn-primary px-4">Kembali ke Beranda</a>
-                            <button class="btn btn-outline-primary px-4" id="btnCetakTiket">Cetak Tiket</button>
+                            <a href="/app/Home.html" class="btn btn-primary px-4" id="btnKembali">Kembali ke Beranda</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    
     <style>
         .checkmark {
             color: #0d6efd;
@@ -72,49 +54,38 @@
     </style>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).ready(function() {
+            // Ambil detail pemesanan dan simpan di Local Storage
+            const bookingDetails = {
+                orderNumber: $('#orderNumber').text(),
+                departureCity: $('#departureCity').text(),
+                destination: $('#destination').text(),
+                departureDate: $('#departureDate').text(),
+                departureTime: $('#departureTime').text(),
+                vehicleType: $('#vehicleType').text()
+            };
+
+            localStorage.setItem('bookingDetails', JSON.stringify(bookingDetails));
+
             // Add hover effect to buttons
             $('.btn').hover(
                 function() { $(this).addClass('shadow-sm'); },
                 function() { $(this).removeClass('shadow-sm'); }
             );
 
-            // Handle print ticket button click
-            $('#btnCetakTiket').click(function() {
-                window.print();
-            });
-
             // Add fade-in effect to details
             $('.bg-light').addClass('animate__animated animate__fadeIn');
         });
-    $(document).ready(function() {
-        // Ambil detail pemesanan dari Local Storage
-        const bookingDetails = JSON.parse(localStorage.getItem('bookingDetails'));
 
-        if (bookingDetails) {
-            // Update detail pemesanan di halaman
-            $('#orderNumber').text(bookingDetails.orderNumber);
-            $('#departureCity').text(bookingDetails.departureCity);
-            $('#destination').text(bookingDetails.destination);
-            $('#departureDate').text(bookingDetails.departureDate);
-            $('#departureTime').text(bookingDetails.departureTime);
-            $('#vehicleType').text(bookingDetails.vehicleType);
-
-            // Optional: Tambahkan detail lainnya sesuai kebutuhan
-
-            // Hapus data dari Local Storage setelah dibaca
-            localStorage.removeItem('bookingDetails');
-        }
-
-        // Tambahkan event listener untuk cetak tiket
-        $('#btnCetakTiket').click(function() {
-            // Cetak tiket dengan detail pemesanan
-            window.print();
+        $('#btnKembali').click(function() {
+            // Simpan status notifikasi ke Local Storage
+            localStorage.setItem('hasNotification', 'true');
+            // Simpan status pembayaran sukses
+            localStorage.setItem('paymentSuccess', 'true');
+            // Redirect ke halaman beranda
+            window.location.href = "home.html"; // Ganti dengan URL halaman beranda Anda
         });
-    });
-
     </script>
 </body>
 </html>
