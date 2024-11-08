@@ -23,7 +23,7 @@
             transition: background-color 0.3s;
         }
         .bank-option.selected {
-            background-color: #007b ff;
+            background-color: #007bff;
             color: white;
         }
     </style>
@@ -75,108 +75,118 @@
                                 <p><strong>Total:</strong> <span id="totalAmount"></span></p>
                                 <p><strong>Status:</strong> Menunggu Pembayaran</p>
                                 <p><strong>Titik Kumpul:</strong> Terminal Bandung</p>
-                                <p><strong>Tanggal Keberangkatan:</strong> <span id="departureDate"></span></p>
-                            </div>
-                        </div>
-                    </div>
+                                <p><strong>Tanggal Keberangkatan:</strong> <span id="departureDate"></span
+                                </p>
+                              </div>
+                          </div>
+                      </div>
   
-                    <!-- Form Konfirmasi Pembayaran -->
-                    <form id="paymentForm">
-                        <div class="mb-4">
-                            <label class="form-label">Pilih Bank</label>
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="bank-option" data-bank="BCA">
-                                        <strong>Bank BCA</strong>
-                                        <p class="mb-0">1234-5678-90</p>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="bank-option" data-bank="Mandiri">
-                                        <strong>Bank Mandiri</strong>
-                                        <p class="mb-0">0987-6543-21</p>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="bank-option" data-bank="BRI">
-                                        <strong>Bank BRI</strong>
-                                        <p class="mb-0">0925-8720-12</p>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="bank-option" data-bank="BTN">
-                                        <strong>Bank BTN</strong>
-                                        <p class="mb-0">1246-1375-00</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                      <!-- Form Konfirmasi Pembayaran -->
+                      <form id="paymentForm">
+                          <div class="mb-4">
+                              <label class="form-label">Pilih Bank</label>
+                              <div class="row">
+                                  <div class="col-6">
+                                      <div class="bank-option" data-bank="BCA">
+                                          <strong>Bank BCA</strong>
+                                          <p class="mb-0">1234-5678-90</p>
+                                      </div>
+                                  </div>
+                                  <div class="col-6">
+                                      <div class="bank-option" data-bank="Mandiri">
+                                          <strong>Bank Mandiri</strong>
+                                          <p class="mb-0">0987-6543-21</p>
+                                      </div>
+                                  </div>
+                                  <div class="col-6">
+                                      <div class="bank-option" data-bank="BRI">
+                                          <strong>Bank BRI</strong>
+                                          <p class="mb-0">0925-8720-12</p>
+                                      </div>
+                                  </div>
+                                  <div class="col-6">
+                                      <div class="bank-option" data-bank="BTN">
+                                          <strong>Bank BTN</strong>
+                                          <p class="mb-0">1246-1375-00</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
   
-                        <div class="mb-3">
-                            <label class="form-label">Nama Pengirim</label>
-                            <input type="text" class="form-control" id="senderName" required placeholder="Masukkan nama pengirim">
-                        </div>
                           <div class="mb-3">
-                            <label class="form-label">Bukti Transfer</label>
-                            <input type="file" class="form-control" id="proofImage" accept="image/*">
-                            <img id="previewImage" src="" alt="Preview Gambar Bukti Transfer">
-                        </div>
+                              <label class="form-label">Nama Pengirim</label>
+                              <input type="text" class="form-control" id="senderName" required placeholder="Masukkan nama pengirim">
+                          </div>
   
-                        <div class="mt-4">
-    <a href="/app/pembayaransukses.html" class="btn btn-primary btn-lg w-100">Konfirmasi Pembayaran</a>
-</div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+                          <div class="mb-3">
+                              <label class="form-label">Jumlah Transfer</label>
+                              <input type="text" class="form-control" id="amount" required placeholder="Masukkan jumlah transfer">
+                              <div class="text-danger" id="amountError" style="display: none;">Jumlah transfer tidak sesuai!</div>
+                          </div>
   
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Retrieve booking details from local storage
-            const bookingDetails = JSON.parse(localStorage.getItem('bookingDetails'));
-            if (bookingDetails) {
-              document.getElementById('bookingCode').textContent = bookingDetails.orderNumber;
-        document.getElementById('packageName').textContent = bookingDetails.destination;
-        document.getElementById('departureTime').textContent = bookingDetails.departureTime;
-        document.getElementById('customerName').textContent = bookingDetails.name;
-        document.getElementById('totalAmount').textContent = bookingDetails.totalPrice;
-        document.getElementById('departureDate').textContent = bookingDetails.departureDate;
-            } else {
-                alert('No booking details found!');
-                window.location.href = 'pemesanan.html'; // Redirect if no booking details
-            }
+                          <div class="mb-3">
+                              <label class="form-label">Bukti Transfer</label>
+                              <input type="file" class="form-control" id="proofImage" accept="image/*">
+                              <img id="previewImage" src="" alt="Preview Gambar Bukti Transfer">
+                          </div>
   
-            // Bank selection
-            document.querySelectorAll('.bank-option').forEach(option => {
-                option.addEventListener('click', function() {
-                    document.querySelectorAll('.bank-option').forEach(opt => opt.classList.remove('selected'));
-                    this.classList.add('selected');
-                });
-            });
+                          <div class="mt-4">
+                              <button type="submit" class="btn btn-primary btn-lg w-100">Konfirmasi Pembayaran</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
   
-            // Amount input formatting
-            document.getElementById('amount').addEventListener('input', function() {
-                let value = this.value.replace(/\D/g, '');
-                if (value === '') return;
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              // Retrieve booking details from local storage
+              const bookingDetails = JSON.parse(localStorage.getItem('bookingDetails'));
+              if (bookingDetails) {
+                  document.getElementById('bookingCode').textContent = bookingDetails.orderNumber;
+                  document.getElementById('packageName').textContent = bookingDetails.destination;
+                  document.getElementById('departureTime').textContent = '08:00 WIB'; // You can customize this
+                  document.getElementById('customerName').textContent = bookingDetails.name;
+                  document.getElementById('totalAmount').textContent = bookingDetails.totalPrice;
+                  document.getElementById('departureDate').textContent = bookingDetails.departureDate;
+                  document.getElementById('CustomerNa,').textContent = bookingDetails.departureDate;
+              } else {
+                  alert('No booking details found!');
+                  window.location.href = 'pemesanan.html'; // Redirect if no booking details
+              }
   
-                this.value = new Intl.NumberFormat('id-ID').format(value);
+              // Bank selection
+              document.querySelectorAll('.bank-option').forEach(option => {
+                  option.addEventListener('click', function() {
+                      document.querySelectorAll('.bank-option').forEach(opt => opt.classList.remove('selected'));
+                      this.classList.add('selected');
+                  });
+              });
   
-                // Validate amount
-                if (parseInt(value) !== 210000) {
-                    document.getElementById('amountError').style.display = 'block';
-                } else {
-                    document.getElementById('amountError').style.display = 'none';
-                }
-            });
+              // Amount input formatting
+              document.getElementById('amount').addEventListener('input', function() {
+                  let value = this.value.replace(/\D/g, '');
+                  if (value === '') return;
   
-            // Image preview
-            document.getElementById('proofImage').addEventListener('change', function() {
-                const file = this.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        document.getElementById('previewImage').src = e.target.result;
+                  this.value = new Intl.NumberFormat('id-ID').format(value);
+  
+                  // Validate amount
+                  if (parseInt(value) !== 210000) {
+                      document.getElementById('amountError').style.display = 'block';
+                  } else {
+                      document.getElementById('amountError').style.display = 'none';
+                  }
+              });
+  
+              // Image preview
+              document.getElementById('proofImage').addEventListener('change', function() {
+                  const file = this.files[0];
+                  if (file) {
+                      const reader = new FileReader();
+                      reader.onload = function(e) {
+                          document.getElementById('previewImage').
+                          document.getElementById('previewImage').src = e.target.result;
                         document.getElementById('previewImage').style.display = 'block';
                     };
                     reader.readAsDataURL(file);
@@ -210,7 +220,7 @@
                 }
 
                 // Here you can handle the payment processing logic
-                alert(`Payment confirmed!\n\nBank: ${selectedBank.dataset.bank}\n Sender Name: ${senderName}\nAmount: IDR ${new Intl.NumberFormat('id-ID').format(amount)}`);
+                alert(`Payment confirmed!\n\nBank: ${selectedBank.dataset.bank}\nSender Name: ${senderName}\nAmount: IDR ${new Intl.NumberFormat('id-ID').format(amount)}`);
 
                 // Clear local storage after successful payment
                 localStorage.removeItem('bookingDetails');
