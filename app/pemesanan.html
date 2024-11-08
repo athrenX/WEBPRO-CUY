@@ -374,21 +374,21 @@
     window.location.href = 'pembayaran.html';
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Retrieve booking details from local storage
-    const bookingDetails = JSON.parse(localStorage.getItem('bookingDetails'));
-    if (bookingDetails) {
-        document.getElementById('bookingCode').textContent = bookingDetails.orderNumber;
-        document.getElementById('packageName').textContent = bookingDetails.destination;
-        document.getElementById('departureTime').textContent = bookingDetails.departureTime;
-        document.getElementById('customerName').textContent = bookingDetails.name;
-        document.getElementById('totalAmount').textContent = bookingDetails.totalPrice;
-        document.getElementById('departureDate').textContent = bookingDetails.departureDate;
-    } else {
-        alert('No booking details found!');
-        window.location.href = 'pemesanan.html'; // Redirect if no booking details
-    }
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Retrieve booking details from local storage
+//     const bookingDetails = JSON.parse(localStorage.getItem('bookingDetails'));
+//     if (bookingDetails) {
+//         document.getElementById('bookingCode').textContent = bookingDetails.orderNumber;
+//         document.getElementById('packageName').textContent = bookingDetails.destination;
+//         document.getElementById('departureTime').textContent = bookingDetails.departureTime;
+//         document.getElementById('customerName').textContent = bookingDetails.name;
+//         document.getElementById('totalAmount').textContent = bookingDetails.totalPrice;
+//         document.getElementById('departureDate').textContent = bookingDetails.departureDate;
+//     } else {
+//         alert('No booking details found!');
+//         window.location.href = 'pemesanan.html'; // Redirect if no booking details
+//     }
+// });
     </script>
 </body>
 </html>

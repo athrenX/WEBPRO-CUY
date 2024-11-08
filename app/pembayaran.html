@@ -117,13 +117,6 @@
                               <label class="form-label">Nama Pengirim</label>
                               <input type="text" class="form-control" id="senderName" required placeholder="Masukkan nama pengirim">
                           </div>
-  
-                          <div class="mb-3">
-                              <label class="form-label">Jumlah Transfer</label>
-                              <input type="text" class="form-control" id="amount" required placeholder="Masukkan jumlah transfer">
-                              <div class="text-danger" id="amountError" style="display: none;">Jumlah transfer tidak sesuai!</div>
-                          </div>
-  
                           <div class="mb-3">
                               <label class="form-label">Bukti Transfer</label>
                               <input type="file" class="form-control" id="proofImage" accept="image/*">
@@ -226,7 +219,7 @@
                 localStorage.removeItem('bookingDetails');
 
                 // Redirect to a success page or home page
-                window.location.href = 'success.html'; // Change to your success page
+                window.location.href = 'pembayaransukses.html'; // Change to your success page
             });
         });
     </script>
