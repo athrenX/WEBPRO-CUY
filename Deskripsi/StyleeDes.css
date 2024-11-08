@@ -1,3 +1,4 @@
+/* Navbar */
 .navbar {
     background-color: transparent !important;
     transition: box-shadow 0.3s, background-color 0.3s;
@@ -127,6 +128,7 @@
     text-align: center;
 }
 
+/* daya tarik */
 .attractions h4 {
     font-weight: bold;
     color: #333;
@@ -151,6 +153,7 @@
     }
 }
 
+/* Kegiatan */
 .activities .activity-card {
     background-color: #fff;
     border-radius: 10px;
@@ -191,7 +194,7 @@
     }
 }
 
-
+/* Footer */
 .footer a {
     color: #fff;
     text-decoration: none;
@@ -232,7 +235,6 @@
     opacity: 1;
 }
 
-/* Button pesan */
   .pesan-sekarang-btn.hidden {
     opacity: 0;
     transform: translateX(-50%) translateY(20px);
