@@ -1,263 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Review - Java Wonderland</title>
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Booking Reviews</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background-color: #007bff;
-            padding: 1%; 
-        }
-
-        .navbar a {
-            color: #fff;
-        }
-
-        .navbar a:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            margin-top: 30px;
-            margin-bottom: 50px;
-        }
-
-        .title-section {
-            background-color: #ffffff;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #007bff;
-            margin-bottom: 10px;
-        }
-
         .review-card {
-            border: 1px solid #dee2e6;
             border-radius: 10px;
-            margin-bottom: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin-bottom: 15px;
         }
-
-        .review-card:hover {
-            transform: scale(1.02);
-        }
-
-        .review-card-header {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-
-        .review-card-body {
-            padding: 20px;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-
-        .footer {
-            background-color: #007bff;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .footer a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        .form-control {
-            border: 1px solid #234364;
-        }
-
-        .form-control:focus {
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-            border-color: #234364;
-        }
-
-        .review-section {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .rating {
-            color: #f39c12;
-        }
-
-        .star {
+        .star-rating i {
+            color: #ffc107;
+            cursor: pointer;
             font-size: 1.5rem;
-            color: #f39c12;
+        }
+        .star-rating i.inactive {
+            color: #dcdcdc;
+        }
+        .review-form textarea {
+            resize: none;
         }
     </style>
 </head>
-<body class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">Java Wonderland</a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div
-                class="collapse navbar-collapse justify-content-end"
-                id="navbarNav"
-            >
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="Home.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">All Trips</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pemesanan.html">Pemesanan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="review.html">Review</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<body class="bg-light">
+    <div class="container py-5">
+        <h2 class="mb-4">Customer Reviews</h2>
 
-    <div class="container review-section">
-        <div class="title-section">
-            <h2>Review Pelanggan</h2>
-            <p>Beri tahu kami pendapat Anda tentang layanan kami!</p>
+        <!-- Review List Section -->
+        <div id="reviewList">
+            <!-- Reviews will be populated here dynamically -->
         </div>
 
-        <form id="reviewForm">
-            <div class="mb-3">
-                <label for="reviewName" class="form-label">Nama Anda</label>
-                <input type="text" class="form-control" id="reviewName" required />
+        <!-- Add Review Form -->
+        <div class="card mt-4 review-form">
+            <div class="card-body">
+                <h5 class="card-title">Add Your Review</h5>
+                <form id="reviewForm">
+                    <div class="mb-3">
+                        <label for="reviewerName" class="form-label">Name</label>
+                        <input type="text" id="reviewerName" class="form-control" required placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Rating</label>
+                        <div id="starRating" class="star-rating mb-2">
+                            <i class="fas fa-star inactive" data-value="1"></i>
+                            <i class="fas fa-star inactive" data-value="2"></i>
+                            <i class="fas fa-star inactive" data-value="3"></i>
+                            <i class="fas fa-star inactive" data-value="4"></i>
+                            <i class="fas fa-star inactive" data-value="5"></i>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="reviewComment" class="form-label">Comment</label>
+                        <textarea id="reviewComment" rows="3" class="form-control" required placeholder="Write your review here"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Review</button>
+                </form>
             </div>
-            <div class="mb-3">
-                <label for="reviewRating" class="form-label">Rating</label>
-                <select class="form-select" id="reviewRating" required>
-                    <option value="">Pilih Rating...</option>
-                    <option value="5">⭐⭐⭐⭐⭐</option>
-                    <option value="4">⭐⭐⭐⭐</option>
-                    <option value="3">⭐⭐⭐</option>
-                    <option value="2">⭐⭐</option>
-                    <option value="1">⭐</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="reviewText" class="form-label">Tulis Review</label>
-                <textarea class="form-control" id="reviewText" rows="4" required></textarea>
-            </div>
-            <button type="button" class="btn btn-primary" onclick="submitReview()">
-                Kirim Review
-            </button>
-        </form>
-
-        <div id="reviewResults" class="mt-4">
-            <h4>Ulasan Sebelumnya:</h4>
-            <div id="reviewsList"></div>
         </div>
     </div>
 
-    <div class="footer">
-        <p>&copy; 2024 Java Wonderland. All rights reserved.</p>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const reviews = [];
+        const reviews = [
+            {
+                name: 'Alice Johnson',
+                rating: 5,
+                comment: 'Excellent service! The bus was comfortable and arrived on time.'
+            },
+            {
+                name: 'John Smith',
+                rating: 4,
+                comment: 'Good experience overall, but the seat selection could be improved.'
+            },
+            {
+                name: 'Maria Garcia',
+                rating: 5,
+                comment: 'I had a wonderful journey, very reliable and friendly staff!'
+            }
+        ];
 
-        function submitReview() {
-            const name = document.getElementById("reviewName").value;
-            const rating = document.getElementById("reviewRating").value;
-            const text = document.getElementById("reviewText").value;
+        let selectedRating = 0;
 
-            // Tambahkan review baru ke array
-            reviews.push({ name, rating, text });
-
-            // Kosongkan form setelah mengirim
-            document.getElementById("reviewForm").reset();
-
-            // Tampilkan semua review
-            displayReviews();
+        // Function to display all reviews
+        function displayReviews() {
+            const reviewList = document.getElementById('reviewList');
+            reviewList.innerHTML = reviews.map(review => `
+                <div class="card review-card">
+                    <div class="card-body">
+                        <h5 class="card-title">${review.name}</h5>
+                        <div class="star-rating mb-2">
+                            ${'<i class="fas fa-star"></i>'.repeat(review.rating)}
+                            ${'<i class="far fa-star"></i>'.repeat(5 - review.rating)}
+                        </div>
+                        <p class="card-text">${review.comment}</p>
+                    </div>
+                </div>
+            `).join('');
         }
 
-        function displayReviews() {
-            const reviewsList = document.getElementById("reviewsList");
-            reviewsList.innerHTML = ""; // Kosongkan daftar ulasan
+        // Function to handle star rating hover and click
+        function handleStarRating() {
+            const stars = document.querySelectorAll('#starRating .fa-star');
+            stars.forEach(star => {
+                // Highlight stars on hover
+                star.addEventListener('mouseover', () => {
+                    const rating = parseInt(star.getAttribute('data-value'));
+                    highlightStars(rating);
+                });
 
-            reviews.forEach(review => {
-                const reviewCard = document.createElement("div");
-                reviewCard.classList.add("review-card");
-                reviewCard.innerHTML = `
-                    <div class="review-card-header">
-                        <h5>${review.name} <span class="rating">${getStars(review.rating)}</span></h5>
-                    </div>
-                    <div class="review-card-body">
-                        <p>${review.text}</p>
-                    </div>
-                `;
-                reviewsList.appendChild(reviewCard);
+                // Remove highlight when not hovering
+                star.addEventListener('mouseout', () => {
+                    highlightStars(selectedRating);
+                });
+
+                // Set rating on click
+                star.addEventListener('click', () => {
+                    selectedRating = parseInt(star.getAttribute('data-value'));
+                    highlightStars(selectedRating);
+                });
             });
         }
 
-        function getStars(rating) {
-            let stars = '';
-            for (let i = 0; i < 5; i++) {
-                } else {
-                    stars += '☆'; // Bintang kosong
-                }
-            }
-            return stars;
+        // Highlight stars based on the rating
+        function highlightStars(rating) {
+            const stars = document.querySelectorAll('#starRating .fa-star');
+            stars.forEach(star => {
+                const starValue = parseInt(star.getAttribute('data-value'));
+                star.classList.toggle('inactive', starValue > rating);
+            });
         }
+
+        // Event listener for the review form submission
+        document.getElementById('reviewForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('reviewerName').value;
+            const comment = document.getElementById('reviewComment').value;
+
+            // Add new review to the list
+            if (selectedRating > 0) {
+                reviews.push({ name, rating: selectedRating, comment });
+                displayReviews();
+                document.getElementById('reviewForm').reset();
+                highlightStars(0);  // Reset star rating display
+                selectedRating = 0;
+            } else {
+                alert("Please select a rating before submitting your review.");
+            }
+        });
+
+        // Initial display of reviews and setup star rating
+        document.addEventListener('DOMContentLoaded', () => {
+            displayReviews();
+            handleStarRating();
+        });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
