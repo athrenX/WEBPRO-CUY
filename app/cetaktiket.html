@@ -123,11 +123,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Ambil data tiket dari localStorage
+            // Ambil data tiket dari localStorage bookingDetails
             const bookingDetails = JSON.parse(localStorage.getItem('bookingDetails'));
             
             if (bookingDetails) {
-                // Update informasi tiket
+                // Update informasi tiket dari pembayaransukses.html
                 $('#orderNumber').text(bookingDetails.orderNumber);
                 $('#departureCity').text(bookingDetails.departureCity);
                 $('#destination').text(bookingDetails.destination);
@@ -135,8 +135,8 @@
                 $('#departureTime').text(bookingDetails.departureTime);
                 $('#vehicleType').text(bookingDetails.vehicleType);
                 
-                // Generate QR Code
-                $('#qrCodeContainer').empty(); // Clear previous QR code
+                // Men-Generate QR Code
+                $('#qrCodeContainer').empty(); // menghapus QR code sebelumnya
                 $('#qrCodeContainer').qrcode({
                     text: bookingDetails.orderNumber, // Ganti dengan informasi yang ingin di-encode
                     width: 150,

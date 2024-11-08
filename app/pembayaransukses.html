@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body class="bg-light">
+    // container
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -21,22 +22,24 @@
                             <p class="text-muted mb-4">Terima kasih telah melakukan pemesanan di Java Wonderland</p>
                         </div>
                         
+                        // Detail pemesanan
                         <div class="bg-light p-4 rounded-3 mb-4">
                             <h5 class="text-primary mb-3">Detail Pemesanan</h5>
                             <div class="row">
                                 <div class="col-md-6 text-start">
-                                    <p><strong>Nomor Pesanan:</strong><br><span id="orderNumber">JW-2024102001</span></p>
-                                    <p><strong>Keberangkatan:</strong><br><span id="departureCity">Bandung</span></p>
-                                    <p><strong>Tujuan:</strong><br><span id="destination">Bromo</span></p>
+                                    <p><strong>Nomor Pesanan:</strong><br><span id="orderNumber"></span></p>
+                                    <p><strong>Nama Lengkap:</strong><br><span id="fullName"></span></p>
+                                    <p><strong>Email:</strong><br><span id="email"></span></p>
+                                    <p><strong>Keberangkatan:</strong><br><span id="departureCity"></span></p>
+                                    <p><strong>Tujuan:</strong><br><span id="destination"></span></p>
                                 </div>
                                 <div class="col-md-6 text-start">
-                                    <p><strong>Tanggal:</strong><br><span id="departureDate">20 Oktober 2024</span></p>
-                                    <p><strong>Jam:</strong><br><span id="departureTime">08:00 WIB</span></p>
-                                    <p><strong>Bus:</strong><br><span id="vehicleType">SISIL</span></p>
+                                    <p><strong>Tanggal:</strong><br><span id="departureDate"></span></p>
+                                    <p><strong>Bus:</strong><br><span id="vehicleType"></span></p>
                                 </div>
                             </div>
                         </div>
-
+                        
                         <div class="d-grid gap-2 d-md-flex justify-content-center">
                             <a href="/app/Home.html" class="btn btn-primary px-4" id="btnKembali">Kembali ke Beranda</a>
                         </div>
@@ -56,17 +59,17 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Ambil detail pemesanan dan simpan di Local Storage
-            const bookingDetails = {
-                orderNumber: $('#orderNumber').text(),
-                departureCity: $('#departureCity').text(),
-                destination: $('#destination').text(),
-                departureDate: $('#departureDate').text(),
-                departureTime: $('#departureTime').text(),
-                vehicleType: $('#vehicleType').text()
-            };
+            // Ambil detail pemesanan dari Local Storage bookingDetails
+            const bookingDetails = JSON.parse(localStorage.getItem('bookingDetails'));
 
-            localStorage.setItem('bookingDetails', JSON.stringify(bookingDetails));
+            // Menampilkan detail pemesanan
+            $('#orderNumber').text(bookingDetails.orderNumber);
+            $('#fullName').text(bookingDetails.name);
+            $('#email').text(bookingDetails.email);
+            $('#departureCity').text(bookingDetails.departureCity);
+            $('#destination').text(bookingDetails.destination);
+            $('#departureDate').text(bookingDetails.departureDate);
+            $('#vehicleType').text(bookingDetails.vehicleType);
 
             // Add hover effect to buttons
             $('.btn').hover(
@@ -74,18 +77,21 @@
                 function() { $(this).removeClass('shadow-sm'); }
             );
 
-            // Add fade-in effect to details
+            // Menambahkan efek fade-in 
             $('.bg-light').addClass('animate__animated animate__fadeIn');
         });
 
+        // fungsi ini berfungsi untuk menyimpan status notif yang akan diterima di Home.html
         $('#btnKembali').click(function() {
             // Simpan status notifikasi ke Local Storage
             localStorage.setItem('hasNotification', 'true');
             // Simpan status pembayaran sukses
             localStorage.setItem('paymentSuccess', 'true');
             // Redirect ke halaman beranda
-            window.location.href = "home.html"; // Ganti dengan URL halaman beranda Anda
+            window.location.href = "Home.html";
         });
     </script>
 </body>
 </html>
+
+    

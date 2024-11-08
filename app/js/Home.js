@@ -60,6 +60,8 @@ $(document).ready(function () {
   });
 });
 
+
+// fungsi untuk notifikasi pada bell dropdown di Home.html
 $(document).ready(function() {
   // Cek status pembayaran saat halaman dimuat
   const paymentSuccess = localStorage.getItem('paymentSuccess');
