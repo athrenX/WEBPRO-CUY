@@ -86,9 +86,7 @@
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
 
-      <!-- Carousel Items -->
-      
-      
+      <!-- Carousel Items -->      
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="/Componen/gambar bromo.jpeg" class="d-block w-100 img-fluid" alt="Gunung Bromo">
@@ -137,7 +135,7 @@
     <button id="closePopup" class="btn-close" aria-label="Close" style="background: none; border: none; color: #fff;">&times;</button>
   </div>
 
-  <!-- Footer -->
+  <!-- JQuery -->
   <footer>
     <p>&copy; 2024 Java Wonderland. All Rights Reserved.</p>
   </footer>
@@ -145,23 +143,22 @@
   <!-- Custom JavaScript -->
   <script src="/app/js/Home.js"></script>
   <script>
-   $(document).ready(function() {
-  // Menampilkan popup mobil setelah 3 detik
+  $(document).ready(function() {
+  // Menampilkan popup setelah 3 detik
   setTimeout(function() {
-    $('#popupBus').css('left', '20px'); // Mobil bergerak ke dalam layar dari kiri
+    $('#popupBus').css('left', '20px'); 
   }, 3000);
 
   // Menutup popup ketika tombol "Close" diklik
   $('#closePopup').click(function() {
-    $('#popupBus').css('left', '100%'); // Mobil bergerak ke luar layar di sisi kanan
+    $('#popupBus').css('left', '-900px'); 
   });
 
-  // Popup akan keluar otomatis setelah 10 detik
+  // Popup akan otomatis keluar setelah 10 detik
   setTimeout(function() {
-    $('#popupBus').css('left', '100%'); // Mobil keluar ke sisi kanan
+    $('#popupBus').css('left', '-900px'); 
   }, 10000);
 });
-
 
 
   </script>
