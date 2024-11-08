@@ -67,15 +67,14 @@ body {
   color: #ffd700; /* Warna emas untuk item aktif */
 }
 
-/* Notification Badge */
-#notification-badge {
-  font-size: 0.7rem;
-  padding: 0.3em 0.5em;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  top: 10%;
-  right: 10%;
+/* Warna gradien untuk tombol */
+.btn-primary-gradient {
+  background: linear-gradient(135deg, #007bff, #4a90e2); 
+  color: #fff; 
+  border: none; 
+  transition: background 0.3s ease; 
 }
+
 
 
 /* Footer Styling */
