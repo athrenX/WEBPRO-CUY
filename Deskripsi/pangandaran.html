@@ -72,7 +72,7 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="#">Beranda</a></li>
+                <li class="breadcrumb-item"><a href="#">Gallery</a></li>
                 <li class="breadcrumb-item"><a href="#">Destinasi</a></li>
                 <li class="breadcrumb-item"><a href="#">Pangandaran | Destinasi Eksotis</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Pangandaran</li>
@@ -191,7 +191,7 @@
         </div>
     </div>
 </footer>
-<a href="/app/pemesananpangandaran.html" class="btn pesan-sekarang-btn" style="text-decoration: none;">Pesan Sekarang</a>
+<a href="/app/pemesanan.html" class="btn pesan-sekarang-btn" style="text-decoration: none;">Pesan Sekarang</a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -199,26 +199,23 @@
     const navbar = document.querySelector('.navbar');
     const pesanButton = document.querySelector('.pesan-sekarang-btn');
   
-    // Fungsi untuk menyembunyikan navbar dan tombol pesan setelah beberapa detik tidak ada aktivitas
     function hideElements() {
-        navbar.classList.add('hidden');  // Menambahkan kelas untuk menyembunyikan navbar
-        pesanButton.classList.add('hidden');  // Menambahkan kelas untuk menyembunyikan tombol pesan
+        navbar.classList.add('hidden');  
+        pesanButton.classList.add('hidden');
     }
   
-    // Fungsi untuk menampilkan navbar dan tombol pesan ketika ada aktivitas
     function showElements() {
-        navbar.classList.remove('hidden');  // Menghapus kelas untuk menampilkan navbar
-        pesanButton.classList.remove('hidden');  // Menghapus kelas untuk menampilkan tombol pesan
-        clearTimeout(timeout);  // Menghentikan timer hideElements
-        timeout = setTimeout(hideElements, 3000);  // Mengatur untuk menyembunyikan navbar dan tombol pesan setelah 3 detik tidak ada aktivitas
+        navbar.classList.remove('hidden');  
+        pesanButton.classList.remove('hidden'); 
+        clearTimeout(timeout);
+        timeout = setTimeout(hideElements, 3000); 
     }
   
-    // Deteksi scroll atau pergerakan mouse untuk navbar dan tombol pesan
-    window.addEventListener('scroll', showElements);  // Menampilkan navbar dan tombol pesan saat scroll
-    window.addEventListener('mousemove', showElements);  // Menampilkan navbar dan tombol pesan saat ada pergerakan mouse
+    window.addEventListener('scroll', showElements);
+    window.addEventListener('mousemove', showElements);
   
-    // Menyembunyikan navbar dan tombol pesan saat halaman pertama kali dimuat
-    timeout = setTimeout(hideElements, 3000);  // Navbar dan tombol pesan akan tersembunyi setelah 3 detik pertama
+    
+    timeout = setTimeout(hideElements, 3000);
 
     window.addEventListener('scroll', () => {
         const elements = document.querySelectorAll('.scroll-animation');
@@ -229,11 +226,13 @@
             }
         });
     });
+
+
     $(document).ready(function() {
-    // Efek fade in untuk konten saat halaman dimuat
+    // Efek fade in
     $('.content, .attractions, .activities').hide().fadeIn(1500);
 
-    // Animasi scroll smooth untuk navigasi
+    // Animasi scroll agar smooth
     $('.navbar-nav a').on('click', function(event) {
         if (this.hash !== "") {
             event.preventDefault();
@@ -246,7 +245,7 @@
         }
     });
 
-    // Efek hover pada kartu aktivitas
+    // Efek hover
     $('.activity-card').hover(
         function() {
             $(this).addClass('shadow-lg scale-up');

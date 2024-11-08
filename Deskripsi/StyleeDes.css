@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 
 
+=======
+/* Navbar */
+>>>>>>> 8c3adb81202898c71295b47fcd57549558bfb21c
 .navbar {
     background-color: transparent !important;
     transition: box-shadow 0.3s, background-color 0.3s;
@@ -129,8 +133,12 @@
     text-align: center;
 }
 
+<<<<<<< HEAD
 /* Additional styling for new sections */
 
+=======
+/* daya tarik */
+>>>>>>> 8c3adb81202898c71295b47fcd57549558bfb21c
 .attractions h4 {
     font-weight: bold;
     color: #333;
@@ -154,7 +162,12 @@
         flex-direction: column;
     }
 }
+<<<<<<< HEAD
 /* Styling untuk Bagian Kegiatan */
+=======
+
+/* Kegiatan */
+>>>>>>> 8c3adb81202898c71295b47fcd57549558bfb21c
 .activities .activity-card {
     background-color: #fff;
     border-radius: 10px;
@@ -195,7 +208,11 @@
     }
 }
 
+<<<<<<< HEAD
 /* Styling untuk ikon sosial media */
+=======
+/* Footer */
+>>>>>>> 8c3adb81202898c71295b47fcd57549558bfb21c
 .footer a {
     color: #fff;
     text-decoration: none;
@@ -237,7 +254,6 @@
     opacity: 1;
 }
 
-/* Button pesan */
   .pesan-sekarang-btn.hidden {
     opacity: 0;
     transform: translateX(-50%) translateY(20px);

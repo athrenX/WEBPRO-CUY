@@ -1,43 +1,3 @@
-// Fungsi utama untuk cek status login dan mengupdate tombol login/logout
-document.addEventListener("DOMContentLoaded", function () {
-  const authText = document.getElementById("authText");
-  const authIcon = document.querySelector("#authButton i");
-  const authButton = document.getElementById("authButton");
-  let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-
-  // Update tampilan tombol login/logout berdasarkan status login
-  function updateAuthButton() {
-    if (isLoggedIn) {
-      authText.textContent = "Logout";
-      authIcon.classList.replace("fa-user", "fa-right-from-bracket");
-    } else {
-      authText.textContent = "Login";
-      authIcon.classList.replace("fa-right-from-bracket", "fa-user");
-    }
-  }
-
-  // Fungsi toggle login/logout
-  function toggleLogin() {
-    if (isLoggedIn) {
-      // Logout dan kembali ke halaman login
-      localStorage.removeItem("isLoggedIn");
-      localStorage.removeItem("username");
-      localStorage.removeItem("email");
-      window.location.href = "login.html";
-    } else {
-      // Arahkan ke halaman login jika belum login
-      window.location.href = "login.html";
-    }
-  }
-
-  // Hubungkan toggleLogin ke tombol authButton
-  authButton.onclick = toggleLogin;
-
-  // Perbarui tampilan tombol authButton pertama kali
-  updateAuthButton();
-});
-
-// Fungsi untuk mensimulasikan login (digunakan saat login berhasil)
 function loginUser(username, email) {
   localStorage.setItem("isLoggedIn", "true");
   localStorage.setItem("username", username);
@@ -98,4 +58,30 @@ $(document).ready(function () {
       reader.readAsDataURL(event.target.files[0]); // Baca file sebagai URL
     }
   });
+});
+
+$(document).ready(function() {
+  // Cek status pembayaran saat halaman dimuat
+  const paymentSuccess = localStorage.getItem('paymentSuccess');
+
+  // Cek apakah ada notifikasi yang belum dibaca
+  const hasNotification = localStorage.getItem('hasNotification');
+
+  if (hasNotification === 'true') {
+      // Tampilkan badge jika ada notifikasi
+      $('#notification-badge').show();
+      $('#notification-badge').text('1'); // Set jumlah notifikasi
+      // Tampilkan dropdown
+      $('#notification-dropdown').show();
+      // Hapus status notifikasi setelah ditampilkan
+      localStorage.removeItem('hasNotification');
+  }
+
+  // Nonaktifkan link jika pembayaran belum berhasil
+  if (paymentSuccess !== 'true') {
+      $('#cetak-tiket-link').css('pointer-events', 'none').css('color', 'gray'); // Menonaktifkan klik dan mengubah warna
+  }  
+
+  // Reset status pembayaran saat halaman dimuat
+  localStorage.removeItem('paymentSuccess');
 });

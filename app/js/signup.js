@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
       localStorage.setItem("user", JSON.stringify(userData));
   
       // Feedback sukses dan redirect ke login
-      feedback.innerHTML = `<div class="alert alert-success">Sign up successful! Redirecting to login...</div>`;
+      feedback.innerHTML = `<div class="alert alert-success">Sign up Berhasil!, menuju ke halaman Login...</div>`;
       setTimeout(() => {
         window.location.href = "login.html";
       }, 2000);
