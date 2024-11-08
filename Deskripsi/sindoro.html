@@ -40,7 +40,7 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-bold" href="/app/gallery.html" style="pointer-events: none;"><i class="fas fa-images me-1"></i>Gallery</a>
+                    <a class="nav-link fw-bold" href="/app/gallery.html"><i class="fas fa-images me-1"></i>Gallery</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/app/reviews.html"><i class="fas fa-comments me-1"></i>Review</a>
@@ -199,13 +199,13 @@
     const navbar = document.querySelector('.navbar');
     const pesanButton = document.querySelector('.pesan-sekarang-btn');
   
-    // Fungsi untuk menyembunyikan navbar dan tombol pesan setelah beberapa detik tidak ada aktivitas
+    //menyembunyikan navbar dan tombol pesan setelah beberapa detik tidak ada aktivitas
     function hideElements() {
         navbar.classList.add('hidden');  // Menambahkan kelas untuk menyembunyikan navbar
         pesanButton.classList.add('hidden');  // Menambahkan kelas untuk menyembunyikan tombol pesan
     }
   
-    // Fungsi untuk menampilkan navbar dan tombol pesan ketika ada aktivitas
+    //menampilkan navbar dan tombol pesan ketika ada aktivitas
     function showElements() {
         navbar.classList.remove('hidden');  // Menghapus kelas untuk menampilkan navbar
         pesanButton.classList.remove('hidden');  // Menghapus kelas untuk menampilkan tombol pesan
